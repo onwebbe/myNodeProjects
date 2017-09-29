@@ -13,10 +13,12 @@ function SiChuanListData(config){
   this.dataversion = 1;
   this.subcategory = '施工企业';
   this.category = '省内企业';
+  this.logkey = "四川数据列表";
 }
 SiChuanListData.itemStr = "";
 SiChuanListData.prototype.step1 = function(){
   var that = this;
+  mongoDB.addLog(this.category+":"+this.subcategory, "info", "SiChuanListData_step1_Start_SiChuanListData_step1", this.logkey);
   var itemData = [];
   var that = this;
   var nightmare = Nightmare({
@@ -38,6 +40,7 @@ SiChuanListData.prototype.step1 = function(){
       //that.gotoPage(midN, 100);
     })
     .catch(function(e){
+      mongoDB.addLog(this.category+":"+this.subcategory, "error", "SiChuanListData_step1_Start_SiChuanListData:"+e, this.logkey);
       console.log(e);
     });
   return this;
@@ -51,9 +54,7 @@ SiChuanListData.prototype.getPage = function(nightM, html, isSavePage){
     isSavePage = true;
   }
   if(isSavePage){
-    console.log("entering get Page:");
     that.saveListData(html);
-    console.log("after save data");
   }
   
   $ = cheerio.load(html);
@@ -61,11 +62,13 @@ SiChuanListData.prototype.getPage = function(nightM, html, isSavePage){
   var nextPageEle = paginator[paginator.length-1];
   var nextEleIndx = paginator.length - 1;
   var isHaveNextPage = $(nextPageEle).attr("disabled");
+  mongoDB.addLog(this.category+":"+this.subcategory, "info", "SiChuanListData_getPage_isHaveNextPage:"+isSavePage, this.logkey);
   if(isHaveNextPage != null){
-    mongodb.close();
+    mongoDB.addLog(that.category+":"+that.subcategory, "info", "SiChuanListData_getPage_没有下一页了，关闭:"+isSavePage, that.logkey);
+    nightM.end();
+    mongoDB.close();
     return;
   }
-  console.log("exists next page");
   var randomTime = Math.random()*1000 + 3000;
   nightM
     .wait(1000)
@@ -86,6 +89,7 @@ SiChuanListData.prototype.getPage = function(nightM, html, isSavePage){
 }
 SiChuanListData.prototype.gotoPage = function(nightM, pageIndex) {
   var that = this;
+  mongoDB.addLog(this.category+":"+this.subcategory, "info", "SiChuanListData_gotoPage_Start_goto_page_Index:"+pageIndex, this.logkey);
   nightM
     .wait(60000)
     .goto('http://xmgk.scjst.gov.cn/QueryInfo/Ente/EnteList.aspx?type=101&arcode=51&myparam='+pageIndex)
@@ -108,17 +112,21 @@ SiChuanListData.prototype.gotoPage = function(nightM, pageIndex) {
 }
 SiChuanListData.prototype.checkIfCorrectPage = function(nightM, html) {
   var that = this;
+  mongoDB.addLog(this.category+":"+this.subcategory, "info", "SiChuanListData_checkIfCorrectPage_start_Check_If_Correct_Page", this.logkey);
   $ = cheerio.load(html);
   if($("img[src='/CheckCode.aspx']").length>0) {
+    mongoDB.addLog(this.category+":"+this.subcategory, "info", "SiChuanListData_checkIfCorrectPage_!------Enter_Verify_Page-----", this.logkey);
     console.log("!!!!!!!!!!!!!error page!!!!!!!!!!!!!!!!");
     this.gotoPage(nightM, parseInt(this.pageIndex) + 1);
     return false;
   } else {
+    mongoDB.addLog(this.category+":"+this.subcategory, "info", "SiChuanListData_checkIfCorrectPage_page_correct:)", this.logkey);
     console.log("correct page");
   }
   return true;
 }
 SiChuanListData.prototype.saveListData = function(html){
+  mongoDB.addLog(this.category+":"+this.subcategory, "info", "SiChuanListData_saveListData_start_save_page", this.logkey);
   $ = cheerio.load(html);
   var rows = $(".table-tbody-bg tr");
   var pageIndex = $("td.paginator .cpb").text();
@@ -147,6 +155,7 @@ SiChuanListData.prototype.saveListData = function(html){
       "lawman": lawman,
       "processed": false
     }
+    mongoDB.addLog(this.category+":"+this.subcategory, "info", "SiChuanListData_saveListData_savecontent:"+JSON.stringify(data), this.logkey);
     mongoDB.insertSiChuanData(data);
   }
 }
