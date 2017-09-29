@@ -1,3 +1,4 @@
+"use strict";
 const fs = require('fs');
 var Q = require("q");
 var Nightmare = require('nightmare');
