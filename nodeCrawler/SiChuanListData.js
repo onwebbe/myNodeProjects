@@ -24,7 +24,7 @@ SiChuanListData.prototype.step1 = function(){
   var that = this;
   var nightmare = Nightmare({
     waitTimeout: 120000, // in ms
-    show: true
+    show: false
   });
   var midN = nightmare
     .goto('http://xmgk.scjst.gov.cn/QueryInfo/Ente/EnteList.aspx?type=101&arcode=51')
