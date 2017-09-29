@@ -24,7 +24,7 @@ SiChuanListData.prototype.step1 = function(){
   var that = this;
   var nightmare = Nightmare({
     waitTimeout: 120000, // in ms
-    show: false
+    show: true
   });
   var midN = nightmare
     .goto('http://xmgk.scjst.gov.cn/QueryInfo/Ente/EnteList.aspx?type=101&arcode=51')
@@ -48,6 +48,7 @@ SiChuanListData.prototype.step1 = function(){
 }
 SiChuanListData.prototype.getPage = function(nightM, html, isSavePage){
   var that = this;
+  mongoDB.addLog(that.category+":"+that.subcategory, "info", "SiChuanListData_getPage_start:isSavePage:"+isSavePage, that.logkey);
   if(!this.checkIfCorrectPage(nightM, html)) {
     return;
   }
@@ -56,14 +57,16 @@ SiChuanListData.prototype.getPage = function(nightM, html, isSavePage){
   }
   if(isSavePage){
     that.saveListData(html);
+  }else{
+    console.log(html);
   }
   
-  $ = cheerio.load(html);
+  let $ = cheerio.load(html);
   var paginator = $("td.paginator>*");
   var nextPageEle = paginator[paginator.length-1];
   var nextEleIndx = paginator.length - 1;
   var isHaveNextPage = $(nextPageEle).attr("disabled");
-  mongoDB.addLog(this.category+":"+this.subcategory, "info", "SiChuanListData_getPage_isHaveNextPage:"+isSavePage, this.logkey);
+  mongoDB.addLog(that.category+":"+that.subcategory, "info", "SiChuanListData_getPage_isHaveNextPage:"+isSavePage, that.logkey);
   if(isHaveNextPage != null){
     mongoDB.addLog(that.category+":"+that.subcategory, "info", "SiChuanListData_getPage_没有下一页了，关闭:"+isSavePage, that.logkey);
     nightM.end();
@@ -99,22 +102,29 @@ SiChuanListData.prototype.gotoPage = function(nightM, pageIndex) {
       var pageLocation = window.location.href;
       var params = pageLocation.split("=");
       var pageIndex = params[params.length-1];
-      __doPostBack('ctl00$mainContent$gvPager', pageIndex);
+      var jsRun  = "<a class='myownpaginator' onclick=\""+"__doPostBack('ctl00$mainContent$gvPager', " + pageIndex + ");" + "\">test</a>";
+      var addEle = $(jsRun);
+      $("body").append(addEle);
+      return document.body.innerHTML;
     })
-    .then(function() {
-      nightM.wait(".paginator")
-            .evaluate(function() {
-              return document.body.innerHTML;
-            })
-            .then(function(res) {
-              that.getPage(nightM, res, false);
-            });
+    .then(function(res) {
+      nightM
+        .wait(5000)
+        .click("a.myownpaginator")
+        .wait(".paginator")
+        .wait(5000)
+        .evaluate(function() {
+          return document.body.innerHTML;
+        })
+        .then(function(reshtml) {
+          that.getPage(nightM, reshtml, false);
+        });
     })
 }
 SiChuanListData.prototype.checkIfCorrectPage = function(nightM, html) {
   var that = this;
   mongoDB.addLog(this.category+":"+this.subcategory, "info", "SiChuanListData_checkIfCorrectPage_start_Check_If_Correct_Page", this.logkey);
-  $ = cheerio.load(html);
+  let $ = cheerio.load(html);
   if($("img[src='/CheckCode.aspx']").length>0) {
     mongoDB.addLog(this.category+":"+this.subcategory, "info", "SiChuanListData_checkIfCorrectPage_!------Enter_Verify_Page-----", this.logkey);
     console.log("!!!!!!!!!!!!!error page!!!!!!!!!!!!!!!!");
@@ -128,7 +138,7 @@ SiChuanListData.prototype.checkIfCorrectPage = function(nightM, html) {
 }
 SiChuanListData.prototype.saveListData = function(html){
   mongoDB.addLog(this.category+":"+this.subcategory, "info", "SiChuanListData_saveListData_start_save_page", this.logkey);
-  $ = cheerio.load(html);
+  let $ = cheerio.load(html);
   var rows = $(".table-tbody-bg tr");
   var pageIndex = $("td.paginator .cpb").text();
   this.pageIndex = pageIndex;
@@ -161,7 +171,7 @@ SiChuanListData.prototype.saveListData = function(html){
   }
 }
 SiChuanListData.prototype.processPageData = function(html){
-  $ = cheerio.load(html);
+  let $ = cheerio.load(html);
   var rows = $(".table-tbody-bg tr");
 
   var paginator = $(".paginator a");
