@@ -1,0 +1,1573 @@
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_step1_Start_SiChuanListData_step1
+数据库连接失败：MongoError: failed to connect to server [localhost:27017] on first connect [MongoError: connect ECONNREFUSED 127.0.0.1:27017]
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_gotoPage_Start_goto_page_Index:636
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_getPage_start:isSavePage:undefined
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_checkIfCorrectPage_start_Check_If_Correct_Page
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_checkIfCorrectPage_page_correct:)
+correct page
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_start_save_page
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17781","pageindex":"636","place":"成都市","companyname":"四川毅立建设工程有限公司","certid":"D351566262","lawman":"雷荣","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17781,
+  pageindex: 636,
+  place: '成都市',
+  companyname: '四川毅立建设工程有限公司',
+  certid: 'D351566262',
+  lawman: '雷荣',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17782","pageindex":"636","place":"成都市","companyname":"四川省亿润建设工程有限公司","certid":"D351450539","lawman":"李桂芬","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17782,
+  pageindex: 636,
+  place: '成都市',
+  companyname: '四川省亿润建设工程有限公司',
+  certid: 'D351450539',
+  lawman: '李桂芬',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17783","pageindex":"636","place":"成都市","companyname":"成都铁安科技有限责任公司","certid":"D351589766","lawman":"张渝","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17783,
+  pageindex: 636,
+  place: '成都市',
+  companyname: '成都铁安科技有限责任公司',
+  certid: 'D351589766',
+  lawman: '张渝',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17784","pageindex":"636","place":"成都市","companyname":"四川新瑞电力有限责任公司","certid":"D351589732","lawman":"刘静","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17784,
+  pageindex: 636,
+  place: '成都市',
+  companyname: '四川新瑞电力有限责任公司',
+  certid: 'D351589732',
+  lawman: '刘静',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17785","pageindex":"636","place":"成都市","companyname":"成都黑蜘蛛网络科技有限公司","certid":"D351589694","lawman":"蒲顺永","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17785,
+  pageindex: 636,
+  place: '成都市',
+  companyname: '成都黑蜘蛛网络科技有限公司',
+  certid: 'D351589694',
+  lawman: '蒲顺永',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17786","pageindex":"636","place":"成都市","companyname":"成都市建树劳务有限公司","certid":"C1024051010800-0538","lawman":"彭志强","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17786,
+  pageindex: 636,
+  place: '成都市',
+  companyname: '成都市建树劳务有限公司',
+  certid: 'C1024051010800-0538',
+  lawman: '彭志强',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17787","pageindex":"636","place":"成都市","companyname":"四川善水源建筑工程有限公司","certid":"D351589820","lawman":"吴艳东","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17787,
+  pageindex: 636,
+  place: '成都市',
+  companyname: '四川善水源建筑工程有限公司',
+  certid: 'D351589820',
+  lawman: '吴艳东',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17788","pageindex":"636","place":"成都市","companyname":"四川省迁鹤建筑工程有限公司","certid":"D351589838","lawman":"黄刚","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17788,
+  pageindex: 636,
+  place: '成都市',
+  companyname: '四川省迁鹤建筑工程有限公司',
+  certid: 'D351589838',
+  lawman: '黄刚',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17789","pageindex":"636","place":"成都市","companyname":"四川伟彬建筑劳务有限公司","certid":"D351589790","lawman":"王伟","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17789,
+  pageindex: 636,
+  place: '成都市',
+  companyname: '四川伟彬建筑劳务有限公司',
+  certid: 'D351589790',
+  lawman: '王伟',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17790","pageindex":"636","place":"成都市","companyname":"四川博立雅建筑装饰工程有限公司","certid":"D251494124","lawman":"刘运胜","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17790,
+  pageindex: 636,
+  place: '成都市',
+  companyname: '四川博立雅建筑装饰工程有限公司',
+  certid: 'D251494124',
+  lawman: '刘运胜',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17791","pageindex":"636","place":"德阳市","companyname":"四川顺锐亚建筑工程有限公司","certid":"D351589564","lawman":"严勇","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17791,
+  pageindex: 636,
+  place: '德阳市',
+  companyname: '四川顺锐亚建筑工程有限公司',
+  certid: 'D351589564',
+  lawman: '严勇',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17792","pageindex":"636","place":"成都市","companyname":"成都弘建达建筑劳务有限公司","certid":"D351569718","lawman":"吕建兵","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17792,
+  pageindex: 636,
+  place: '成都市',
+  companyname: '成都弘建达建筑劳务有限公司',
+  certid: 'D351569718',
+  lawman: '吕建兵',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17793","pageindex":"636","place":"内江市","companyname":"四川省内江市宝腾建筑有限公司","certid":"D251559783","lawman":"张天佑","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17793,
+  pageindex: 636,
+  place: '内江市',
+  companyname: '四川省内江市宝腾建筑有限公司',
+  certid: 'D251559783',
+  lawman: '张天佑',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17794","pageindex":"636","place":"遂宁市","companyname":"大英县宏创装饰有限责任公司","certid":"D251589873","lawman":"税国华","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17794,
+  pageindex: 636,
+  place: '遂宁市',
+  companyname: '大英县宏创装饰有限责任公司',
+  certid: 'D251589873',
+  lawman: '税国华',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17795","pageindex":"636","place":"成都市","companyname":"成都伟峰生态园林工程有限公司","certid":"D251452980","lawman":"白志芳","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17795,
+  pageindex: 636,
+  place: '成都市',
+  companyname: '成都伟峰生态园林工程有限公司',
+  certid: 'D251452980',
+  lawman: '白志芳',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17796","pageindex":"636","place":"成都市","companyname":"成都鼎顺建筑装饰工程有限公司","certid":"D351486189","lawman":"万永福","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17796,
+  pageindex: 636,
+  place: '成都市',
+  companyname: '成都鼎顺建筑装饰工程有限公司',
+  certid: 'D351486189',
+  lawman: '万永福',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17797","pageindex":"636","place":"成都市","companyname":"四川泰润防水工程有限公司","certid":"D251436640","lawman":"李朋","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17797,
+  pageindex: 636,
+  place: '成都市',
+  companyname: '四川泰润防水工程有限公司',
+  certid: 'D251436640',
+  lawman: '李朋',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17798","pageindex":"636","place":"成都市","companyname":"四川路航建设工程有限责任公司","certid":"D251455120","lawman":"赵志鹏","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17798,
+  pageindex: 636,
+  place: '成都市',
+  companyname: '四川路航建设工程有限责任公司',
+  certid: 'D251455120',
+  lawman: '赵志鹏',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17799","pageindex":"636","place":"自贡市","companyname":"自贡联众建筑劳务有限公司","certid":"D351589522","lawman":"付晓疆","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17799,
+  pageindex: 636,
+  place: '自贡市',
+  companyname: '自贡联众建筑劳务有限公司',
+  certid: 'D351589522',
+  lawman: '付晓疆',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17800","pageindex":"636","place":"自贡市","companyname":"四川远德建设工程有限公司","certid":"D351417003","lawman":"邹兴财","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17800,
+  pageindex: 636,
+  place: '自贡市',
+  companyname: '四川远德建设工程有限公司',
+  certid: 'D351417003',
+  lawman: '邹兴财',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17801","pageindex":"636","place":"德阳市","companyname":"四川省段家大院子园林有限公司","certid":"D351589602","lawman":"段太勇","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17801,
+  pageindex: 636,
+  place: '德阳市',
+  companyname: '四川省段家大院子园林有限公司',
+  certid: 'D351589602',
+  lawman: '段太勇',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17802","pageindex":"636","place":"成都市","companyname":"四川万腾基业建设工程有限公司","certid":"D351532826","lawman":"张树根","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17802,
+  pageindex: 636,
+  place: '成都市',
+  companyname: '四川万腾基业建设工程有限公司',
+  certid: 'D351532826',
+  lawman: '张树根',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17803","pageindex":"636","place":"乐山市","companyname":"四川永宏达建筑工程有限公司","certid":"D251409900","lawman":"向永刚","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17803,
+  pageindex: 636,
+  place: '乐山市',
+  companyname: '四川永宏达建筑工程有限公司',
+  certid: 'D251409900',
+  lawman: '向永刚',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17804","pageindex":"636","place":"成都市","companyname":"成都久茂建筑劳务有限公司","certid":"D351574892","lawman":"金晓秀","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17804,
+  pageindex: 636,
+  place: '成都市',
+  companyname: '成都久茂建筑劳务有限公司',
+  certid: 'D351574892',
+  lawman: '金晓秀',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17805","pageindex":"636","place":"成都市","companyname":"四川省富立泰建设工程有限公司","certid":"D251589953","lawman":"傅利攀","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17805,
+  pageindex: 636,
+  place: '成都市',
+  companyname: '四川省富立泰建设工程有限公司',
+  certid: 'D251589953',
+  lawman: '傅利攀',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17806","pageindex":"636","place":"成都市","companyname":"成都圣瑞博门窗有限责任公司","certid":"D251589899","lawman":"王宾河","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17806,
+  pageindex: 636,
+  place: '成都市',
+  companyname: '成都圣瑞博门窗有限责任公司',
+  certid: 'D251589899',
+  lawman: '王宾河',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17807","pageindex":"636","place":"内江市","companyname":"中建材（内江）玻璃高新技术有限公司","certid":"D251589929","lawman":"茆令文","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17807,
+  pageindex: 636,
+  place: '内江市',
+  companyname: '中建材（内江）玻璃高新技术有限公司',
+  certid: 'D251589929',
+  lawman: '茆令文',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17808","pageindex":"636","place":"成都市","companyname":"四川宝泉岭建设工程有限公司","certid":"D351578954","lawman":"魏莉","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17808,
+  pageindex: 636,
+  place: '成都市',
+  companyname: '四川宝泉岭建设工程有限公司',
+  certid: 'D351578954',
+  lawman: '魏莉',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_getPage_isHaveNextPage:true
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_getPage_start:isSavePage:undefined
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_checkIfCorrectPage_start_Check_If_Correct_Page
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_checkIfCorrectPage_page_correct:)
+correct page
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_start_save_page
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17809","pageindex":"637","place":"甘孜州","companyname":"甘孜州昇立混凝土有限公司","certid":"D351527348","lawman":"童波","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17809,
+  pageindex: 637,
+  place: '甘孜州',
+  companyname: '甘孜州昇立混凝土有限公司',
+  certid: 'D351527348',
+  lawman: '童波',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17810","pageindex":"637","place":"成都市","companyname":"四川众兴华业市政照明工程有限公司","certid":"D251426016","lawman":"张平安","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17810,
+  pageindex: 637,
+  place: '成都市',
+  companyname: '四川众兴华业市政照明工程有限公司',
+  certid: 'D251426016',
+  lawman: '张平安',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17811","pageindex":"637","place":"成都市","companyname":"四川蜀鸿泰建筑工程有限公司","certid":"D351546206","lawman":"车显刚","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17811,
+  pageindex: 637,
+  place: '成都市',
+  companyname: '四川蜀鸿泰建筑工程有限公司',
+  certid: 'D351546206',
+  lawman: '车显刚',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17812","pageindex":"637","place":"成都市","companyname":"四川朗能电力工程有限公司","certid":"D251589945","lawman":"栾维刚","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17812,
+  pageindex: 637,
+  place: '成都市',
+  companyname: '四川朗能电力工程有限公司',
+  certid: 'D251589945',
+  lawman: '栾维刚',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17813","pageindex":"637","place":"成都市","companyname":"四川创嘉杰水务工程有限公司","certid":"D251478850","lawman":"刘建红","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17813,
+  pageindex: 637,
+  place: '成都市',
+  companyname: '四川创嘉杰水务工程有限公司',
+  certid: 'D251478850',
+  lawman: '刘建红',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17814","pageindex":"637","place":"德阳市","companyname":"四川鸿顺达建筑工程有限公司","certid":"D351589598","lawman":"毛永发","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17814,
+  pageindex: 637,
+  place: '德阳市',
+  companyname: '四川鸿顺达建筑工程有限公司',
+  certid: 'D351589598',
+  lawman: '毛永发',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17815","pageindex":"637","place":"遂宁市","companyname":"四川首尚品信装饰工程有限公司","certid":"D251523973","lawman":"郭强","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17815,
+  pageindex: 637,
+  place: '遂宁市',
+  companyname: '四川首尚品信装饰工程有限公司',
+  certid: 'D251523973',
+  lawman: '郭强',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17816","pageindex":"637","place":"绵阳市","companyname":"绵阳市圣鼎建筑有限公司","certid":"D351414985","lawman":"黄丕明","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17816,
+  pageindex: 637,
+  place: '绵阳市',
+  companyname: '绵阳市圣鼎建筑有限公司',
+  certid: 'D351414985',
+  lawman: '黄丕明',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17817","pageindex":"637","place":"宜宾市","companyname":"宜宾浩宇建筑装饰有限责任公司","certid":"D251589979","lawman":"刘俊","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17817,
+  pageindex: 637,
+  place: '宜宾市',
+  companyname: '宜宾浩宇建筑装饰有限责任公司',
+  certid: 'D251589979',
+  lawman: '刘俊',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17818","pageindex":"637","place":"自贡市","companyname":"富顺县垚鑫建材有限公司","certid":"D351589514","lawman":"韦汉激","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17818,
+  pageindex: 637,
+  place: '自贡市',
+  companyname: '富顺县垚鑫建材有限公司',
+  certid: 'D351589514',
+  lawman: '韦汉激',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17819","pageindex":"637","place":"成都市","companyname":"四川浩泰送变电工程有限公司","certid":"D351450555","lawman":"彭德志","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17819,
+  pageindex: 637,
+  place: '成都市',
+  companyname: '四川浩泰送变电工程有限公司',
+  certid: 'D351450555',
+  lawman: '彭德志',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17820","pageindex":"637","place":"成都市","companyname":"四川石化建设集团有限公司","certid":"D251494456","lawman":"王炎","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17820,
+  pageindex: 637,
+  place: '成都市',
+  companyname: '四川石化建设集团有限公司',
+  certid: 'D251494456',
+  lawman: '王炎',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17821","pageindex":"637","place":"成都市","companyname":"四川中力恒远装饰工程有限公司","certid":"D251589881","lawman":"刘潇","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17821,
+  pageindex: 637,
+  place: '成都市',
+  companyname: '四川中力恒远装饰工程有限公司',
+  certid: 'D251589881',
+  lawman: '刘潇',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17822","pageindex":"637","place":"成都市","companyname":"成都欣天龙数码科技有限公司","certid":"D251495642","lawman":"曾令捷","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17822,
+  pageindex: 637,
+  place: '成都市',
+  companyname: '成都欣天龙数码科技有限公司',
+  certid: 'D251495642',
+  lawman: '曾令捷',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17823","pageindex":"637","place":"成都市","companyname":"四川峻通铁路工程有限公司","certid":"D251589911","lawman":"李若嘉","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17823,
+  pageindex: 637,
+  place: '成都市',
+  companyname: '四川峻通铁路工程有限公司',
+  certid: 'D251589911',
+  lawman: '李若嘉',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17824","pageindex":"637","place":"德阳市","companyname":"中江准点商品砼有限公司","certid":"D351589580","lawman":"丁绍荣","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17824,
+  pageindex: 637,
+  place: '德阳市',
+  companyname: '中江准点商品砼有限公司',
+  certid: 'D351589580',
+  lawman: '丁绍荣',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17825","pageindex":"637","place":"成都市","companyname":"四川天荣华建筑工程有限公司","certid":"D251491870","lawman":"涂文胜","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17825,
+  pageindex: 637,
+  place: '成都市',
+  companyname: '四川天荣华建筑工程有限公司',
+  certid: 'D251491870',
+  lawman: '涂文胜',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17826","pageindex":"637","place":"广元市","companyname":"四川卓瑞建筑劳务有限公司","certid":"C1094051080004","lawman":"牟华如","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17826,
+  pageindex: 637,
+  place: '广元市',
+  companyname: '四川卓瑞建筑劳务有限公司',
+  certid: 'C1094051080004',
+  lawman: '牟华如',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17827","pageindex":"637","place":"成都市","companyname":"成都竑沁建筑安装工程有限公司","certid":"D351556188","lawman":"谢和平","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17827,
+  pageindex: 637,
+  place: '成都市',
+  companyname: '成都竑沁建筑安装工程有限公司',
+  certid: 'D351556188',
+  lawman: '谢和平',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17828","pageindex":"637","place":"成都市","companyname":"成都众大通信工程有限公司","certid":"D251590005","lawman":"黄晓彬","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17828,
+  pageindex: 637,
+  place: '成都市',
+  companyname: '成都众大通信工程有限公司',
+  certid: 'D251590005',
+  lawman: '黄晓彬',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17829","pageindex":"637","place":"内江市","companyname":"内江市万通劳务有限公司","certid":"D351448687","lawman":"李平","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17829,
+  pageindex: 637,
+  place: '内江市',
+  companyname: '内江市万通劳务有限公司',
+  certid: 'D351448687',
+  lawman: '李平',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17830","pageindex":"637","place":"成都市","companyname":"四川省科景建设工程有限公司","certid":"D251589995","lawman":"张明","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17830,
+  pageindex: 637,
+  place: '成都市',
+  companyname: '四川省科景建设工程有限公司',
+  certid: 'D251589995',
+  lawman: '张明',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17831","pageindex":"637","place":"成都市","companyname":"成都亿铭达机电设备安装工程有限公司","certid":"D251590143","lawman":"孙先良","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17831,
+  pageindex: 637,
+  place: '成都市',
+  companyname: '成都亿铭达机电设备安装工程有限公司',
+  certid: 'D251590143',
+  lawman: '孙先良',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17832","pageindex":"637","place":"成都市","companyname":"四川臻远网络科技有限公司","certid":"D251590127","lawman":"陈诸仁","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17832,
+  pageindex: 637,
+  place: '成都市',
+  companyname: '四川臻远网络科技有限公司',
+  certid: 'D251590127',
+  lawman: '陈诸仁',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17833","pageindex":"637","place":"成都市","companyname":"四川金闽建筑装饰工程有限公司","certid":"D251418880","lawman":"冯针红","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17833,
+  pageindex: 637,
+  place: '成都市',
+  companyname: '四川金闽建筑装饰工程有限公司',
+  certid: 'D251418880',
+  lawman: '冯针红',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17834","pageindex":"637","place":"成都市","companyname":"四川华蓝建筑劳务有限公司","certid":"C1024051010700-1633","lawman":"苏江月","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17834,
+  pageindex: 637,
+  place: '成都市',
+  companyname: '四川华蓝建筑劳务有限公司',
+  certid: 'C1024051010700-1633',
+  lawman: '苏江月',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17835","pageindex":"637","place":"成都市","companyname":"四川鑫鸿海建设工程有限公司","certid":"D251589903","lawman":"李彦","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17835,
+  pageindex: 637,
+  place: '成都市',
+  companyname: '四川鑫鸿海建设工程有限公司',
+  certid: 'D251589903',
+  lawman: '李彦',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17836","pageindex":"637","place":"成都市","companyname":"四川蜀汇通建设有限公司","certid":"D251590013","lawman":"陈光","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17836,
+  pageindex: 637,
+  place: '成都市',
+  companyname: '四川蜀汇通建设有限公司',
+  certid: 'D251590013',
+  lawman: '陈光',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_getPage_isHaveNextPage:true
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_getPage_start:isSavePage:undefined
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_checkIfCorrectPage_start_Check_If_Correct_Page
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_checkIfCorrectPage_page_correct:)
+correct page
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_start_save_page
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17837","pageindex":"638","place":"成都市","companyname":"四川石油管理局","certid":"D251590135","lawman":"马新华","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17837,
+  pageindex: 638,
+  place: '成都市',
+  companyname: '四川石油管理局',
+  certid: 'D251590135',
+  lawman: '马新华',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17838","pageindex":"638","place":"宜宾市","companyname":"宜宾飞越防腐工程有限公司","certid":"D251444422","lawman":"李洪刚","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17838,
+  pageindex: 638,
+  place: '宜宾市',
+  companyname: '宜宾飞越防腐工程有限公司',
+  certid: 'D251444422',
+  lawman: '李洪刚',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17839","pageindex":"638","place":"凉山州","companyname":"甘洛县聚信混凝土有限责任公司","certid":"D351589370","lawman":"阿木布伟","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17839,
+  pageindex: 638,
+  place: '凉山州',
+  companyname: '甘洛县聚信混凝土有限责任公司',
+  certid: 'D351589370',
+  lawman: '阿木布伟',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17840","pageindex":"638","place":"南充市","companyname":"南充顺友锦宸建材有限公司","certid":"D351589396","lawman":"李浩南","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17840,
+  pageindex: 638,
+  place: '南充市',
+  companyname: '南充顺友锦宸建材有限公司',
+  certid: 'D351589396',
+  lawman: '李浩南',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17841","pageindex":"638","place":"成都市","companyname":"四川博恒建筑劳务有限公司","certid":"D351537158","lawman":"朱信文","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17841,
+  pageindex: 638,
+  place: '成都市',
+  companyname: '四川博恒建筑劳务有限公司',
+  certid: 'D351537158',
+  lawman: '朱信文',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17842","pageindex":"638","place":"南充市","companyname":"仪陇县润德建材有限公司","certid":"D351589418","lawman":"杨涛","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17842,
+  pageindex: 638,
+  place: '南充市',
+  companyname: '仪陇县润德建材有限公司',
+  certid: 'D351589418',
+  lawman: '杨涛',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17843","pageindex":"638","place":"广元市","companyname":"四川广旺能源发展（集团）有限责任公司","certid":"D251434292","lawman":"胡文","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17843,
+  pageindex: 638,
+  place: '广元市',
+  companyname: '四川广旺能源发展（集团）有限责任公司',
+  certid: 'D251434292',
+  lawman: '胡文',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17844","pageindex":"638","place":"成都市","companyname":"四川泛亚嘉华建设工程有限公司","certid":"D351589346","lawman":"文炳丽","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17844,
+  pageindex: 638,
+  place: '成都市',
+  companyname: '四川泛亚嘉华建设工程有限公司',
+  certid: 'D351589346',
+  lawman: '文炳丽',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17845","pageindex":"638","place":"甘孜州","companyname":"甘孜州恒基混凝土有限公司","certid":"D351527330","lawman":"李旭宏","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17845,
+  pageindex: 638,
+  place: '甘孜州',
+  companyname: '甘孜州恒基混凝土有限公司',
+  certid: 'D351527330',
+  lawman: '李旭宏',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17846","pageindex":"638","place":"遂宁市","companyname":"四川洪军建筑劳务有限公司","certid":"D351475473","lawman":"吴洪军","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17846,
+  pageindex: 638,
+  place: '遂宁市',
+  companyname: '四川洪军建筑劳务有限公司',
+  certid: 'D351475473',
+  lawman: '吴洪军',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17847","pageindex":"638","place":"成都市","companyname":"成都高新伟业建筑安装工程有限公司","certid":"D351521484","lawman":"张广伟","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17847,
+  pageindex: 638,
+  place: '成都市',
+  companyname: '成都高新伟业建筑安装工程有限公司',
+  certid: 'D351521484',
+  lawman: '张广伟',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17848","pageindex":"638","place":"成都市","companyname":"四川众鸿泰劳务有限公司","certid":"D351471563","lawman":"肖光友","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17848,
+  pageindex: 638,
+  place: '成都市',
+  companyname: '四川众鸿泰劳务有限公司',
+  certid: 'D351471563',
+  lawman: '肖光友',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17849","pageindex":"638","place":"南充市","companyname":"四川宏鹏建筑劳务有限公司","certid":"D351589434","lawman":"刘海波","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17849,
+  pageindex: 638,
+  place: '南充市',
+  companyname: '四川宏鹏建筑劳务有限公司',
+  certid: 'D351589434',
+  lawman: '刘海波',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17850","pageindex":"638","place":"乐山市","companyname":"乐山市启程建筑劳务有限公司","certid":"D351589400","lawman":"张明富","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17850,
+  pageindex: 638,
+  place: '乐山市',
+  companyname: '乐山市启程建筑劳务有限公司',
+  certid: 'D351589400',
+  lawman: '张明富',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17851","pageindex":"638","place":"成都市","companyname":"四川普荣建设工程有限公司","certid":"D351585646","lawman":"张玲","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17851,
+  pageindex: 638,
+  place: '成都市',
+  companyname: '四川普荣建设工程有限公司',
+  certid: 'D351585646',
+  lawman: '张玲',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17852","pageindex":"638","place":"成都市","companyname":"四川翔瑞市政工程有限责任公司","certid":"D251430550","lawman":"席思通","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17852,
+  pageindex: 638,
+  place: '成都市',
+  companyname: '四川翔瑞市政工程有限责任公司',
+  certid: 'D251430550',
+  lawman: '席思通',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17853","pageindex":"638","place":"凉山州","companyname":"喜德瑞新建筑工程有限责任公司","certid":"D351589282","lawman":"龙德友","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17853,
+  pageindex: 638,
+  place: '凉山州',
+  companyname: '喜德瑞新建筑工程有限责任公司',
+  certid: 'D351589282',
+  lawman: '龙德友',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17854","pageindex":"638","place":"资阳市","companyname":"资阳市金固建筑劳务有限责任公司","certid":"D351589152","lawman":"曾跃权","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17854,
+  pageindex: 638,
+  place: '资阳市',
+  companyname: '资阳市金固建筑劳务有限责任公司',
+  certid: 'D351589152',
+  lawman: '曾跃权',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17855","pageindex":"638","place":"成都市","companyname":"四川艾比保温工程有限公司","certid":"D251428842","lawman":"叶洪明","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17855,
+  pageindex: 638,
+  place: '成都市',
+  companyname: '四川艾比保温工程有限公司',
+  certid: 'D251428842',
+  lawman: '叶洪明',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17856","pageindex":"638","place":"成都市","companyname":"四川至诚建筑劳务工程有限公司","certid":"D351511010","lawman":"张国雍","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17856,
+  pageindex: 638,
+  place: '成都市',
+  companyname: '四川至诚建筑劳务工程有限公司',
+  certid: 'D351511010',
+  lawman: '张国雍',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17857","pageindex":"638","place":"巴中市","companyname":"四川秦鹏建筑劳务有限公司","certid":"D351138954","lawman":"秦平","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17857,
+  pageindex: 638,
+  place: '巴中市',
+  companyname: '四川秦鹏建筑劳务有限公司',
+  certid: 'D351138954',
+  lawman: '秦平',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17858","pageindex":"638","place":"自贡市","companyname":"四川世恒建筑劳务有限公司","certid":"C1064951032200-0042","lawman":"许增能","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17858,
+  pageindex: 638,
+  place: '自贡市',
+  companyname: '四川世恒建筑劳务有限公司',
+  certid: 'C1064951032200-0042',
+  lawman: '许增能',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17859","pageindex":"638","place":"成都市","companyname":"四川豪宏建设工程有限公司","certid":"D251462274","lawman":"杨胜蓉","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17859,
+  pageindex: 638,
+  place: '成都市',
+  companyname: '四川豪宏建设工程有限公司',
+  certid: 'D251462274',
+  lawman: '杨胜蓉',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17860","pageindex":"638","place":"成都市","companyname":"成都至力路桥工程有限公司","certid":"D351546588","lawman":"李会","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17860,
+  pageindex: 638,
+  place: '成都市',
+  companyname: '成都至力路桥工程有限公司',
+  certid: 'D351546588',
+  lawman: '李会',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17861","pageindex":"638","place":"成都市","companyname":"四川世泰建设工程有限公司","certid":"D251462006","lawman":"张军","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17861,
+  pageindex: 638,
+  place: '成都市',
+  companyname: '四川世泰建设工程有限公司',
+  certid: 'D251462006',
+  lawman: '张军',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17862","pageindex":"638","place":"巴中市","companyname":"巴中宏杰电力有限公司","certid":"D351588684","lawman":"邬小红","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17862,
+  pageindex: 638,
+  place: '巴中市',
+  companyname: '巴中宏杰电力有限公司',
+  certid: 'D351588684',
+  lawman: '邬小红',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17863","pageindex":"638","place":"成都市","companyname":"四川红谷建筑劳务有限公司","certid":"D351414339","lawman":"陈琴","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17863,
+  pageindex: 638,
+  place: '成都市',
+  companyname: '四川红谷建筑劳务有限公司',
+  certid: 'D351414339',
+  lawman: '陈琴',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17864","pageindex":"638","place":"成都市","companyname":"四川智全建设工程有限公司","certid":"D351589240","lawman":"王元海","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17864,
+  pageindex: 638,
+  place: '成都市',
+  companyname: '四川智全建设工程有限公司',
+  certid: 'D351589240',
+  lawman: '王元海',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_getPage_isHaveNextPage:true
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_getPage_start:isSavePage:undefined
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_checkIfCorrectPage_start_Check_If_Correct_Page
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_checkIfCorrectPage_page_correct:)
+correct page
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_start_save_page
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17865","pageindex":"639","place":"成都市","companyname":"四川友佳建筑劳务有限公司","certid":"D351471643","lawman":"王英","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17865,
+  pageindex: 639,
+  place: '成都市',
+  companyname: '四川友佳建筑劳务有限公司',
+  certid: 'D351471643',
+  lawman: '王英',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17866","pageindex":"639","place":"成都市","companyname":"四川睿华建设工程有限公司","certid":"D351560728","lawman":"王振龙","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17866,
+  pageindex: 639,
+  place: '成都市',
+  companyname: '四川睿华建设工程有限公司',
+  certid: 'D351560728',
+  lawman: '王振龙',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17867","pageindex":"639","place":"成都市","companyname":"成都新宇联公路工程有限公司","certid":"D251493824","lawman":"徐宏能","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17867,
+  pageindex: 639,
+  place: '成都市',
+  companyname: '成都新宇联公路工程有限公司',
+  certid: 'D251493824',
+  lawman: '徐宏能',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17868","pageindex":"639","place":"成都市","companyname":"四川信安邦建筑劳务有限公司","certid":"D351552470","lawman":"屈波","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17868,
+  pageindex: 639,
+  place: '成都市',
+  companyname: '四川信安邦建筑劳务有限公司',
+  certid: 'D351552470',
+  lawman: '屈波',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17869","pageindex":"639","place":"阿坝州","companyname":"汶川嘉信建筑劳务服务有限公司","certid":"D351589178","lawman":"白嘉","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17869,
+  pageindex: 639,
+  place: '阿坝州',
+  companyname: '汶川嘉信建筑劳务服务有限公司',
+  certid: 'D351589178',
+  lawman: '白嘉',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17870","pageindex":"639","place":"成都市","companyname":"四川欣丰园林绿化工程有限责任公司","certid":"D351589232","lawman":"陈丽蓉","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17870,
+  pageindex: 639,
+  place: '成都市',
+  companyname: '四川欣丰园林绿化工程有限责任公司',
+  certid: 'D351589232',
+  lawman: '陈丽蓉',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17871","pageindex":"639","place":"资阳市","companyname":"资阳市民创建筑劳务有限公司","certid":"C1094051200000-0082","lawman":"封文金","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17871,
+  pageindex: 639,
+  place: '资阳市',
+  companyname: '资阳市民创建筑劳务有限公司',
+  certid: 'C1094051200000-0082',
+  lawman: '封文金',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17872","pageindex":"639","place":"成都市","companyname":"四川省欣国泰机电设备安装工程有限公司","certid":"D351589014","lawman":"赵建国","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17872,
+  pageindex: 639,
+  place: '成都市',
+  companyname: '四川省欣国泰机电设备安装工程有限公司',
+  certid: 'D351589014',
+  lawman: '赵建国',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17873","pageindex":"639","place":"成都市","companyname":"四川铭福劳务有限公司","certid":"D351588966","lawman":"晏光凤","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17873,
+  pageindex: 639,
+  place: '成都市',
+  companyname: '四川铭福劳务有限公司',
+  certid: 'D351588966',
+  lawman: '晏光凤',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17874","pageindex":"639","place":"成都市","companyname":"四川图强建筑劳务有限公司","certid":"D351589030","lawman":"冉龙华","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17874,
+  pageindex: 639,
+  place: '成都市',
+  companyname: '四川图强建筑劳务有限公司',
+  certid: 'D351589030',
+  lawman: '冉龙华',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17875","pageindex":"639","place":"成都市","companyname":"四川峻弘建筑工程有限公司","certid":"D351589144","lawman":"张家富","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17875,
+  pageindex: 639,
+  place: '成都市',
+  companyname: '四川峻弘建筑工程有限公司',
+  certid: 'D351589144',
+  lawman: '张家富',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17876","pageindex":"639","place":"南充市","companyname":"四川众强建筑工程有限公司","certid":"D351588756","lawman":"姚洪成","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17876,
+  pageindex: 639,
+  place: '南充市',
+  companyname: '四川众强建筑工程有限公司',
+  certid: 'D351588756',
+  lawman: '姚洪成',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17877","pageindex":"639","place":"达州市","companyname":"四川省龙城独州建筑工程有限公司","certid":"D351588748","lawman":"李杰","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17877,
+  pageindex: 639,
+  place: '达州市',
+  companyname: '四川省龙城独州建筑工程有限公司',
+  certid: 'D351588748',
+  lawman: '李杰',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17878","pageindex":"639","place":"成都市","companyname":"四川鸿腾建筑劳务有限公司","certid":"C1064051000000-1783","lawman":"何小兵","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17878,
+  pageindex: 639,
+  place: '成都市',
+  companyname: '四川鸿腾建筑劳务有限公司',
+  certid: 'C1064051000000-1783',
+  lawman: '何小兵',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17879","pageindex":"639","place":"成都市","companyname":"四川铁建爆破工程有限公司","certid":"D351589022","lawman":"杜斌","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17879,
+  pageindex: 639,
+  place: '成都市',
+  companyname: '四川铁建爆破工程有限公司',
+  certid: 'D351589022',
+  lawman: '杜斌',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17880","pageindex":"639","place":"眉山市","companyname":"洪雅固力商品混凝土有限公司","certid":"D351588668","lawman":"陈述伟","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17880,
+  pageindex: 639,
+  place: '眉山市',
+  companyname: '洪雅固力商品混凝土有限公司',
+  certid: 'D351588668',
+  lawman: '陈述伟',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17881","pageindex":"639","place":"成都市","companyname":"四川其峰水利建设有限公司","certid":"D351588958","lawman":"白惠芬","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17881,
+  pageindex: 639,
+  place: '成都市',
+  companyname: '四川其峰水利建设有限公司',
+  certid: 'D351588958',
+  lawman: '白惠芬',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17882","pageindex":"639","place":"成都市","companyname":"四川省宇洋建筑劳务有限公司","certid":"D351589080","lawman":"景洪涛","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17882,
+  pageindex: 639,
+  place: '成都市',
+  companyname: '四川省宇洋建筑劳务有限公司',
+  certid: 'D351589080',
+  lawman: '景洪涛',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17883","pageindex":"639","place":"成都市","companyname":"四川上成市政公用工程有限公司","certid":"D351589136","lawman":"彭晓燕","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17883,
+  pageindex: 639,
+  place: '成都市',
+  companyname: '四川上成市政公用工程有限公司',
+  certid: 'D351589136',
+  lawman: '彭晓燕',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17884","pageindex":"639","place":"成都市","companyname":"成都创盛宏达建筑工程有限公司","certid":"D351588844","lawman":"王勇","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17884,
+  pageindex: 639,
+  place: '成都市',
+  companyname: '成都创盛宏达建筑工程有限公司',
+  certid: 'D351588844',
+  lawman: '王勇',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17885","pageindex":"639","place":"成都市","companyname":"四川安捷达建设工程有限公司","certid":"D351588772","lawman":"陈芊羽","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17885,
+  pageindex: 639,
+  place: '成都市',
+  companyname: '四川安捷达建设工程有限公司',
+  certid: 'D351588772',
+  lawman: '陈芊羽',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17886","pageindex":"639","place":"成都市","companyname":"四川雪利篷房制造有限公司","certid":"D351589128","lawman":"杨文彬","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17886,
+  pageindex: 639,
+  place: '成都市',
+  companyname: '四川雪利篷房制造有限公司',
+  certid: 'D351589128',
+  lawman: '杨文彬',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17887","pageindex":"639","place":"成都市","companyname":"成都中达天盛劳务有限公司","certid":"C1064051010900-0713","lawman":"胡泽盛","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17887,
+  pageindex: 639,
+  place: '成都市',
+  companyname: '成都中达天盛劳务有限公司',
+  certid: 'C1064051010900-0713',
+  lawman: '胡泽盛',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17888","pageindex":"639","place":"成都市","companyname":"成都力拓技博建筑劳务有限公司","certid":"D351588974","lawman":"邱国平","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17888,
+  pageindex: 639,
+  place: '成都市',
+  companyname: '成都力拓技博建筑劳务有限公司',
+  certid: 'D351588974',
+  lawman: '邱国平',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17889","pageindex":"639","place":"成都市","companyname":"四川宇能建设工程有限公司","certid":"D351568442","lawman":"赵潜","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17889,
+  pageindex: 639,
+  place: '成都市',
+  companyname: '四川宇能建设工程有限公司',
+  certid: 'D351568442',
+  lawman: '赵潜',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17890","pageindex":"639","place":"达州市","companyname":"四川鼎好建筑劳务有限公司","certid":"D351588722","lawman":"符纯平","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17890,
+  pageindex: 639,
+  place: '达州市',
+  companyname: '四川鼎好建筑劳务有限公司',
+  certid: 'D351588722',
+  lawman: '符纯平',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17891","pageindex":"639","place":"德阳市","companyname":"四川天立宏建设工程有限公司","certid":"D251446900","lawman":"王刚","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17891,
+  pageindex: 639,
+  place: '德阳市',
+  companyname: '四川天立宏建设工程有限公司',
+  certid: 'D251446900',
+  lawman: '王刚',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17892","pageindex":"639","place":"成都市","companyname":"四川省辰茂建筑劳务有限公司","certid":"D351588908","lawman":"王茂刚","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17892,
+  pageindex: 639,
+  place: '成都市',
+  companyname: '四川省辰茂建筑劳务有限公司',
+  certid: 'D351588908',
+  lawman: '王茂刚',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_getPage_isHaveNextPage:true
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_getPage_start:isSavePage:undefined
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_checkIfCorrectPage_start_Check_If_Correct_Page
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_checkIfCorrectPage_page_correct:)
+correct page
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_start_save_page
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17893","pageindex":"640","place":"达州市","companyname":"四川品域建筑工程有限公司","certid":"D351588730","lawman":"刘兴茂","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17893,
+  pageindex: 640,
+  place: '达州市',
+  companyname: '四川品域建筑工程有限公司',
+  certid: 'D351588730',
+  lawman: '刘兴茂',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17894","pageindex":"640","place":"成都市","companyname":"四川新房弯建筑装饰设计有限公司","certid":"D351588894","lawman":"段治国","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17894,
+  pageindex: 640,
+  place: '成都市',
+  companyname: '四川新房弯建筑装饰设计有限公司',
+  certid: 'D351588894',
+  lawman: '段治国',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17895","pageindex":"640","place":"成都市","companyname":"通威电力工程（成都）有限公司","certid":"D351588940","lawman":"何东键","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17895,
+  pageindex: 640,
+  place: '成都市',
+  companyname: '通威电力工程（成都）有限公司',
+  certid: 'D351588940',
+  lawman: '何东键',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17896","pageindex":"640","place":"成都市","companyname":"四川兴中恒建设工程有限公司","certid":"D251564779","lawman":"徐宏平","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17896,
+  pageindex: 640,
+  place: '成都市',
+  companyname: '四川兴中恒建设工程有限公司',
+  certid: 'D251564779',
+  lawman: '徐宏平',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17897","pageindex":"640","place":"成都市","companyname":"四川大雁源盛建筑装修装饰有限公司","certid":"D251491400","lawman":"刘敏全","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17897,
+  pageindex: 640,
+  place: '成都市',
+  companyname: '四川大雁源盛建筑装修装饰有限公司',
+  certid: 'D251491400',
+  lawman: '刘敏全',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17898","pageindex":"640","place":"成都市","companyname":"成都瑞怡建筑劳务服务有限公司","certid":"C1084051010808","lawman":"郑明生","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17898,
+  pageindex: 640,
+  place: '成都市',
+  companyname: '成都瑞怡建筑劳务服务有限公司',
+  certid: 'C1084051010808',
+  lawman: '郑明生',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17899","pageindex":"640","place":"成都市","companyname":"四川必达公路工程有限公司","certid":"D351499735","lawman":"甘锡联","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17899,
+  pageindex: 640,
+  place: '成都市',
+  companyname: '四川必达公路工程有限公司',
+  certid: 'D351499735',
+  lawman: '甘锡联',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17900","pageindex":"640","place":"成都市","companyname":"四川盛杰劳务有限公司","certid":"D351541386","lawman":"熊祥","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17900,
+  pageindex: 640,
+  place: '成都市',
+  companyname: '四川盛杰劳务有限公司',
+  certid: 'D351541386',
+  lawman: '熊祥',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17901","pageindex":"640","place":"成都市","companyname":"成都金穗建筑工程有限责任公司","certid":"D251467652","lawman":"王新民","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17901,
+  pageindex: 640,
+  place: '成都市',
+  companyname: '成都金穗建筑工程有限责任公司',
+  certid: 'D251467652',
+  lawman: '王新民',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17902","pageindex":"640","place":"凉山州","companyname":"四川远浩建筑工程有限公司","certid":"D251425388","lawman":"李琼","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17902,
+  pageindex: 640,
+  place: '凉山州',
+  companyname: '四川远浩建筑工程有限公司',
+  certid: 'D251425388',
+  lawman: '李琼',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17903","pageindex":"640","place":"成都市","companyname":"四川旺民建筑劳务有限公司","certid":"C1064051010700-1547","lawman":"李富彬","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17903,
+  pageindex: 640,
+  place: '成都市',
+  companyname: '四川旺民建筑劳务有限公司',
+  certid: 'C1064051010700-1547',
+  lawman: '李富彬',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17904","pageindex":"640","place":"成都市","companyname":"四川凯基劳务有限公司","certid":"D351553094","lawman":"况霞","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17904,
+  pageindex: 640,
+  place: '成都市',
+  companyname: '四川凯基劳务有限公司',
+  certid: 'D351553094',
+  lawman: '况霞',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17905","pageindex":"640","place":"成都市","companyname":"成都市德凡建筑劳务有限责任公司","certid":"D351589110","lawman":"郑远德","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17905,
+  pageindex: 640,
+  place: '成都市',
+  companyname: '成都市德凡建筑劳务有限责任公司',
+  certid: 'D351589110',
+  lawman: '郑远德',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17906","pageindex":"640","place":"成都市","companyname":"四川万扬建设工程有限公司","certid":"D351585120","lawman":"杨再兴","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17906,
+  pageindex: 640,
+  place: '成都市',
+  companyname: '四川万扬建设工程有限公司',
+  certid: 'D351585120',
+  lawman: '杨再兴',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17907","pageindex":"640","place":"成都市","companyname":"四川吉龙昌建设工程有限公司","certid":"D351588990","lawman":"赵光伟","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17907,
+  pageindex: 640,
+  place: '成都市',
+  companyname: '四川吉龙昌建设工程有限公司',
+  certid: 'D351588990',
+  lawman: '赵光伟',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17908","pageindex":"640","place":"成都市","companyname":"四川锐城建设工程有限公司","certid":"D351519364","lawman":"许娟","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17908,
+  pageindex: 640,
+  place: '成都市',
+  companyname: '四川锐城建设工程有限公司',
+  certid: 'D351519364',
+  lawman: '许娟',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17909","pageindex":"640","place":"成都市","companyname":"四川金周电力工程有限公司","certid":"D251430752","lawman":"王思周","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17909,
+  pageindex: 640,
+  place: '成都市',
+  companyname: '四川金周电力工程有限公司',
+  certid: 'D251430752',
+  lawman: '王思周',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17910","pageindex":"640","place":"成都市","companyname":"成都市安达劳务有限公司","certid":"D351502904","lawman":"张福彬","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17910,
+  pageindex: 640,
+  place: '成都市',
+  companyname: '成都市安达劳务有限公司',
+  certid: 'D351502904',
+  lawman: '张福彬',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17911","pageindex":"640","place":"成都市","companyname":"四川友盟建筑装饰工程有限公司","certid":"D251557827","lawman":"白康","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17911,
+  pageindex: 640,
+  place: '成都市',
+  companyname: '四川友盟建筑装饰工程有限公司',
+  certid: 'D251557827',
+  lawman: '白康',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17912","pageindex":"640","place":"巴中市","companyname":"四川省天雄建设工程有限公司","certid":"D351408341","lawman":"陈文才","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17912,
+  pageindex: 640,
+  place: '巴中市',
+  companyname: '四川省天雄建设工程有限公司',
+  certid: 'D351408341',
+  lawman: '陈文才',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17913","pageindex":"640","place":"成都市","companyname":"金堂县高程建筑劳务服务有限公司","certid":"D351568354","lawman":"杜群芳","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17913,
+  pageindex: 640,
+  place: '成都市',
+  companyname: '金堂县高程建筑劳务服务有限公司',
+  certid: 'D351568354',
+  lawman: '杜群芳',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17914","pageindex":"640","place":"成都市","companyname":"四川人和劳务有限责任公司","certid":"D351518790","lawman":"李小东","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17914,
+  pageindex: 640,
+  place: '成都市',
+  companyname: '四川人和劳务有限责任公司',
+  certid: 'D351518790',
+  lawman: '李小东',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17915","pageindex":"640","place":"成都市","companyname":"四川信和兴建筑工程有限公司","certid":"D351454109","lawman":"陈勇","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17915,
+  pageindex: 640,
+  place: '成都市',
+  companyname: '四川信和兴建筑工程有限公司',
+  certid: 'D351454109',
+  lawman: '陈勇',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17916","pageindex":"640","place":"成都市","companyname":"成都聿铭建筑劳务有限公司","certid":"D351525206","lawman":"余泳","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17916,
+  pageindex: 640,
+  place: '成都市',
+  companyname: '成都聿铭建筑劳务有限公司',
+  certid: 'D351525206',
+  lawman: '余泳',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17917","pageindex":"640","place":"成都市","companyname":"四川中宏峰建筑劳务有限公司","certid":"D351588924","lawman":"许美双","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17917,
+  pageindex: 640,
+  place: '成都市',
+  companyname: '四川中宏峰建筑劳务有限公司',
+  certid: 'D351588924',
+  lawman: '许美双',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17918","pageindex":"640","place":"绵阳市","companyname":"四川东环建设工程有限公司","certid":"D351588554","lawman":"何加猛","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17918,
+  pageindex: 640,
+  place: '绵阳市',
+  companyname: '四川东环建设工程有限公司',
+  certid: 'D351588554',
+  lawman: '何加猛',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17919","pageindex":"640","place":"成都市","companyname":"成都晟世建筑劳务有限公司","certid":"D351526194","lawman":"亢燕燕","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17919,
+  pageindex: 640,
+  place: '成都市',
+  companyname: '成都晟世建筑劳务有限公司',
+  certid: 'D351526194',
+  lawman: '亢燕燕',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_saveListData_savecontent:{"version":1,"subcategory":"施工企业","category":"省内企业","id":"17920","pageindex":"640","place":"成都市","companyname":"四川聚众劳务有限公司","certid":"D351517982","lawman":"向毅","processed":false}
+{ version: 1,
+  category: '省内企业',
+  subcategory: '施工企业',
+  id: 17920,
+  pageindex: 640,
+  place: '成都市',
+  companyname: '四川聚众劳务有限公司',
+  certid: 'D351517982',
+  lawman: '向毅',
+  processed: false }
+level:info key:四川数据列表 ttype:省内企业:施工企业 content:SiChuanListData_getPage_isHaveNextPage:true

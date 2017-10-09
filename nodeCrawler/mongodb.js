@@ -65,8 +65,8 @@ MongoDB.prototype.prepareSiChuanData = function(){
 	var SiChuanDataSchema = new mongoose.Schema({
 		category: String,
 		subcategory: String,
-		id: String,
-		pageindex: String,
+		id: Number,
+		pageindex: Number,
 		place: String,
 		companyname: String,
 		certid: String,
@@ -135,8 +135,8 @@ MongoDB.prototype.insertSiChuanData = function(data){
 			"version": version,
 			"category": category,
 			"subcategory": subcategory,
-			"id": id,
-			"pageindex": pageindex,
+			"id": parseInt(id),
+			"pageindex": parseInt(pageindex),
 			"place": place,
 			"companyname": companyname,
 			"certid": certid,
@@ -147,7 +147,16 @@ MongoDB.prototype.insertSiChuanData = function(data){
 	var siChuanData = new this.SiChuanDataModel(theData);
 	siChuanData.save();
 }
-
+MongoDB.prototype.findSiChuanData = function(query) {
+	var deferred = Q.defer();
+	if(query==null){
+		query = {};
+	}
+	this.SiChuanDataModel.find(query, function(err, data){
+		deferred.resolve(data);
+	});
+	return deferred.promise;
+}
 MongoDB.prototype.findZhuJianBu = function(query){
 	var deferred = Q.defer();
 	if(query==null){

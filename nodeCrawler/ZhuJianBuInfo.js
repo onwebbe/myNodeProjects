@@ -27,7 +27,7 @@ ZhuJianBuInfo.prototype.step1 = function(){
 	  .wait(".filter_right_tip.fa.fa-plus-circle")
 	  .click(".filter_right_tip.fa.fa-plus-circle")
 	/*  .wait("#live-search")
-	  .type('#live-search', '上海建筑科学研究院')
+	  type('#live-search', '上海建筑科学研究院').
 	  .click(".search_button")*/
 	  .wait(1000)
 	  .click(".listing_filters>fieldset:nth-child(4) .comp_icon")
@@ -802,8 +802,8 @@ ZhuJianBuInfo.prototype.getZhuJianBuData = function(){
 		});
 	return deferred.promise;
 }
-var zhujian = new ZhuJianBuInfo();
-zhujian.getZhuJianBuDetail();
+/*var zhujian = new ZhuJianBuInfo();
+zhujian.getZhuJianBuDetail();*/
 //zhujian.getZhuJianBuPerson("http://jzsc.mohurd.gov.cn/dataservice/query/comp/regStaffList/001607220057224912", {id:"test"});
 //zhujian.step1();
 /*var overAllInfo = [];
