@@ -664,7 +664,7 @@ SiChuanZhuJianBuData.prototype.processTimeInterval = function(listdata) {
       var item = listdata[currentIndex++];
       self.getCompanyInfo(item);
     }
-  }, 5000);
+  }, 10000);
 };
 proxyServers.getProxy()
   .then(function() {
