@@ -79,7 +79,7 @@ GetProxy.prototype.validateProxy = function(proxy) {
       .get("http://www.baidu.com/?param="+proxy)
       .proxy("http://"+proxy)
       .timeout({
-        response: 5000,  // Wait 5 seconds for the server to start sending,
+        response: 10000,  // Wait 5 seconds for the server to start sending,
         deadline: 10000, // but allow 1 minute for the file to finish loading.
       })
       .end(function (err, sres) {
@@ -100,9 +100,11 @@ GetProxy.prototype.validateProxy = function(proxy) {
             console.log("!!!!not valid:" + proxystr);
             self.notValidProxyList.push(proxystr);
           }
+        } else {
+          console.log("error get from baidu");
         }
         defer.resolve();
-      }).timeout(5000);
+      });
   return defer.promise;
 }
 /* let proxy = new GetProxy();

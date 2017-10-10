@@ -33,7 +33,7 @@ SiChuanZhuJianBuData.prototype.getCompanyInfo = function(companyInfo) {
   var companyName = companyInfo.companyname;
   var id = companyInfo.id;
   var theProxy = this.getNextProxy();
-  console.log('Start getCompanyInfo:id'+id+':name:'+companyName+':proxy:'+theProxy);
+  console.log('Start getCompanyInfo:id:'+id+':name:'+companyName+':proxy:'+theProxy);
   request
     .post('http://jzsc.mohurd.gov.cn/dataservice/query/comp/list')
     .proxy('http://'+theProxy)
