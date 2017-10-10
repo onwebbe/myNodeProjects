@@ -23,7 +23,7 @@ SiChuanZhuJianBuData.prototype.getNextProxy = function() {
 };
 SiChuanZhuJianBuData.prototype.getAllCompanyName = function() {
   var deferred = Q.defer();
-  mongoDB.findSiChuanData().then(function(data) {
+  mongoDB.findSiChuanData({'processed': false}).then(function(data) {
     deferred.resolve(data);
   });
   return deferred.promise;
@@ -98,6 +98,7 @@ SiChuanZhuJianBuData.prototype.saveListData = function(html, index) {
     };
   }
   mongoDB.insertZhuJianBu(itemObj);
+  mongoDB.updateSiChuanData({id:parseInt(index)}, {processed: true});
   return itemObj;
 };
 
@@ -769,13 +770,13 @@ SiChuanZhuJianBuData.prototype.getZhuJianBuHomePageInformation = function(){
       console.log("---------------");
       self.getAllCompanyName()
        .then(function(data) {
-         self.processZhuJianBuHomeTimeInterval(data);
-         //console.log(data);
+          self.processZhuJianBuHomeTimeInterval(data);
+          // console.log(data);
        });
     }
   );
 };
 var test = new SiChuanZhuJianBuData();
-test.getZhuJianBuDetailInformation();
+test.getZhuJianBuHomePageInformation();
 
 module.exports = SiChuanZhuJianBuData;

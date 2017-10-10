@@ -149,7 +149,7 @@ MongoDB.prototype.insertSiChuanData = function(data){
 }
 MongoDB.prototype.findSiChuanData = function(query) {
 	var deferred = Q.defer();
-	if(query==null){
+	if (query == null) {
 		query = {};
 	}
 	this.SiChuanDataModel.find(query, function(err, data){
