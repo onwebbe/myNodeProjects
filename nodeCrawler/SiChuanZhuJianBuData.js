@@ -53,18 +53,26 @@ SiChuanZhuJianBuData.prototype.getCompanyInfo = function(companyInfo) {
       }
     ).end(function(err, res) {
       if (res == null || res.res == null ) {
+        console.log('getCompanyInfo_error_noreply:companyid:' + id + ':name:' + companyName);
         console.log(res);
+      } else {
+        var html = res.res.text;
+        self.saveListData(html, id);
       }
-      var html = res.res.text;
-      self.saveListData(html, id);
     });
 };
 SiChuanZhuJianBuData.prototype.saveListData = function(html, index) {
-  var $ = cheerio.load(html);
-  var items = $('.table_box .cursorDefault tr');
   var itemObj = {};
-  for (var i=0; i<items.length; i++) {
-    var item = $(items[i]);
+  var $ = null;
+  var items = null;
+  try {
+    $ = cheerio.load(html);
+    items = $('.table_box .cursorDefault tr');
+  } catch (e) {
+    console.log('saveListData_error:'+e);
+  }
+  if ($ && items && items.length && items.length>0) {
+    var item = $(items[0]);
     var tdItems = item.find('td');
     var id = $(tdItems[1]).text();
     var name = $(tdItems[2]).text();
@@ -79,9 +87,17 @@ SiChuanZhuJianBuData.prototype.saveListData = function(html, index) {
       'lawMan': lawMan,
       'place': place
     };
-    mongoDB.insertZhuJianBu(itemObj);
-    break;
+  } else {
+    itemObj = {
+      'index': parseInt(index),
+      'id': '',
+      'url': '',
+      'name': '',
+      'lawMan': '',
+      'place': ''
+    };
   }
+  mongoDB.insertZhuJianBu(itemObj);
   return itemObj;
 };
 
