@@ -4,7 +4,7 @@ var cheerio = require('cheerio');
 var Q = require("q");
 var verifyTimeout = 3000;
 function GetProxy(){
-  this.apiurl = "http://api.goubanjia.com/api/get.shtml?order=ab8a0dc28f69eafe14b26a8f91b01637&num=200&carrier=0&protocol=1&an1=1&an2=2&an3=3&sp1=1&sp2=2&sort=2&system=1&distinct=0&rettype=1&seprator=%0D%0A";
+  this.apiurl = "http://api.goubanjia.com/api/get.shtml?order=ab8a0dc28f69eafe14b26a8f91b01637&num=30&carrier=0&protocol=1&an1=1&an2=2&an3=3&sp1=1&sp2=2&sort=2&system=1&distinct=0&rettype=1&seprator=%0D%0A";
   this.currentSetOfProxyList = [];
   this.validProxyList = [];
   this.notValidProxyList = [];
@@ -83,27 +83,40 @@ GetProxy.prototype.validateProxy = function(proxy) {
         deadline: 10000, // but allow 1 minute for the file to finish loading.
       })
       .end(function (err, sres) {
-        if(sres && sres.req){
-          let url = sres.req.path;
-          let urlParams = url.split("=");
-          let proxystr = urlParams[urlParams.length - 1];
-          var dataText = sres.res.text;
-          if(dataText == null || dataText == "null") {
-            console.log("!!!!not valid:" + proxystr);
-            self.notValidProxyList.push(proxystr);
+        try {
+          if (err) {
+            if (err.timeout) {
+              console.log('error timeout get from baidu');
+            } else {
+              console.log('error other get from baidu')
+            }
+          } else {
+            if(sres && sres.req){
+              let url = sres.req.path;
+              let urlParams = url.split("=");
+              let proxystr = urlParams[urlParams.length - 1];
+              var dataText = sres.res.text;
+              if(dataText == null || dataText == "null") {
+                console.log("!!!!not valid:" + proxystr);
+                self.notValidProxyList.push(proxystr);
+              }
+              let $ = cheerio.load(dataText);
+              if ($(".s_ipt").length > 0) {
+                console.log("valid:" + proxystr);
+                self.validProxyList.push(proxystr);
+              }else{
+                console.log("!!!!not valid:" + proxystr);
+                self.notValidProxyList.push(proxystr);
+              }
+            } else {
+              console.log("error get from baidu");
+            }
           }
-          let $ = cheerio.load(dataText);
-          if ($(".s_ipt").length > 0) {
-            console.log("valid:" + proxystr);
-            self.validProxyList.push(proxystr);
-          }else{
-            console.log("!!!!not valid:" + proxystr);
-            self.notValidProxyList.push(proxystr);
-          }
-        } else {
-          console.log("error get from baidu");
+        } catch (e) {
+          console.log("exception get from baidu");
+        } finally {
+          defer.resolve();
         }
-        defer.resolve();
       });
   return defer.promise;
 }

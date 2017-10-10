@@ -101,18 +101,63 @@ SiChuanZhuJianBuData.prototype.saveListData = function(html, index) {
   return itemObj;
 };
 
-SiChuanZhuJianBuData.prototype.getCompanyDetailInfo = function(url) {
-  request.get(url).end(function(err, res) {
-    var html = res.res.text;
-    self.saveCompanyDetailInfoOverall(html);
-  });
+SiChuanZhuJianBuData.prototype.getCompanyDetailInfo = function(item) {
+  console.log('start getCompanyDetailInfo');
+  console.log(item);
+  var self = this;
+  var url = item.url;
+  var index = item.index;
+  var companyname = item.name;
+  if(url == null || url == "" || url.indexOf('undefined')>=0) {
+    console.log('getCompanyDetailInfo_nodata_id:' + index);
+    var info = {
+      recordIndex: index,
+      companyUniqueCode: '',
+      lawMan: '',
+      category: '',
+      city: '',
+      address: '',
+      certificateURL: '',
+      registerPersonURL: '',
+      projectURL: '',
+      companyName: companyname
+    };
+    this.saveCompanyDetailInfoOverallToDB(info);
+    return;
+  }
+  var theProxy = this.getNextProxy();
+  request.get(url)
+    .proxy('http://'+theProxy)
+    .end(function(err, res) {
+      if (res && res.res) {
+        var html = res.res.text;
+        self.saveCompanyDetailInfoOverall(html, index);
+      } else {
+        console.log('getCompanyDetailInfo_error_id:' + index);
+        var info = {
+          recordIndex: index,
+          companyUniqueCode: '',
+          lawMan: '',
+          category: '',
+          city: '',
+          address: '',
+          certificateURL: '',
+          registerPersonURL: '',
+          projectURL: '',
+          companyName: companyname
+        };
+        this.saveCompanyDetailInfoOverallToDB(info);
+      }
+      
+    });
+  return;
 };
 SiChuanZhuJianBuData.prototype.saveCompanyDetailInfoOverall = function(html, saveIdx) {
   var $ = cheerio.load(html);
   var tdItems = $('.pro_table_box.datas_table td');
   var overAllInfo = {};
   overAllInfo['recordIndex'] = saveIdx;
-  var replaceReg = '/\\t|\\n/g';
+  var replaceReg = '/\\t|\\n|\\s/g';
   for (var i=0; i<tdItems.length; i++) {
     var tdItem = $(tdItems[i]);
     switch (i) {
@@ -670,26 +715,67 @@ SiChuanZhuJianBuData.prototype.getZhuJianBuData = function(){
     });
   return deferred.promise;
 };
-SiChuanZhuJianBuData.prototype.processTimeInterval = function(listdata) {
+
+SiChuanZhuJianBuData.prototype.processZhuJianBuDetailTimeInterval = function(listdata) {
+  console.log('processZhuJianBuDetailTimeInterval');
+  var currentIndex = 0;
+  var self = this;
+  var intervalID = setInterval(function() {
+    console.log(currentIndex + '' + listdata.length);
+    if (currentIndex >= listdata.length) {
+      mySqlDB.close();
+      mongoDB.close();
+      clearInterval(intervalID);
+    } else {
+      var item = listdata[currentIndex++];
+      self.getCompanyDetailInfo(item);
+    }
+  }, 3000);
+};
+SiChuanZhuJianBuData.prototype.getZhuJianBuDetailInformation = function(){
+  var self = this;
+  var deferred = Q.defer();
+  proxyServers.getProxy()
+    .then(function() {
+      console.log("---------------");
+      mongoDB.findZhuJianBu()
+       .then(function(data) {
+         self.processZhuJianBuDetailTimeInterval(data);
+         //console.log(data);
+       });
+    }
+  );
+};
+
+
+SiChuanZhuJianBuData.prototype.processZhuJianBuHomeTimeInterval = function(listdata) {
   var currentIndex = 0;
   var self = this;
   var intervalID = setInterval(function() {
     if (currentIndex >= listdata.length) {
       clearInterval(intervalID);
+      mySqlDB.close();
+      mongoDB.close();
     } else {
       var item = listdata[currentIndex++];
       self.getCompanyInfo(item);
     }
   }, 3000);
 };
-proxyServers.getProxy()
-  .then(function() {
-    var test = new SiChuanZhuJianBuData();
-    test.getAllCompanyName()
-      .then(function(data) {
-        test.processTimeInterval(data);
-        //console.log(data);
-      });
-  });
+SiChuanZhuJianBuData.prototype.getZhuJianBuHomePageInformation = function(){
+  var self = this;
+  proxyServers.getProxy()
+    .then(function() {
+      console.log("---------------");
+      self.getAllCompanyName()
+       .then(function(data) {
+         self.processZhuJianBuHomeTimeInterval(data);
+         //console.log(data);
+       });
+    }
+  );
+};
+var test = new SiChuanZhuJianBuData();
+test.getZhuJianBuDetailInformation();
 
 module.exports = SiChuanZhuJianBuData;

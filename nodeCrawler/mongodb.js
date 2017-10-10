@@ -157,6 +157,15 @@ MongoDB.prototype.findSiChuanData = function(query) {
 	});
 	return deferred.promise;
 }
+MongoDB.prototype.updateSiChuanData = function(query, update) {
+	var deferred = Q.defer();
+	this.SiChuanDataModel.update(query, {$set:update }, function(err, obj) {
+		console.log(err);
+		console.log(obj);
+		deferred.resolve();
+	});
+	return deferred.promise;
+}
 MongoDB.prototype.findZhuJianBu = function(query){
 	var deferred = Q.defer();
 	if(query==null){
