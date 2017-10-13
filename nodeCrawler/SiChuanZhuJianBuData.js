@@ -705,7 +705,7 @@ SiChuanZhuJianBuData.prototype.getZhuJianBuHomePageDetail = function(){
   );
 };
 var test = new SiChuanZhuJianBuData();
-test.getZhuJianBuHomePageInformation();
+test.getZhuJianBuDetailInformation();
 
 module.exports = SiChuanZhuJianBuData;
 
