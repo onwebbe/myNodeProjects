@@ -156,7 +156,7 @@ SiChuanZhuJianBuData.prototype.getCompanyDetailInfo = function(item) {
           projectURL: '',
           companyName: companyname
         };
-        this.saveCompanyDetailInfoOverallToDB(info);
+        self.saveCompanyDetailInfoOverallToDB(info);
       }
       
     });
@@ -655,7 +655,7 @@ SiChuanZhuJianBuData.prototype.getZhuJianBuDetailInformation = function(){
   proxyServers.getProxy()
     .then(function() {
       console.log("---------------");
-      mongoDB.findZhuJianBu()
+      mongoDB.findZhuJianBu({"processed": false})
        .then(function(data) {
          self.processZhuJianBuDetailTimeInterval(data);
          //console.log(data);
