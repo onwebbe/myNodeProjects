@@ -176,6 +176,15 @@ MongoDB.prototype.findZhuJianBu = function(query){
 	});
 	return deferred.promise;
 }
+MongoDB.prototype.updateZhuJuanBu = function(query, update) {
+	var deferred = Q.defer();
+	this.ZhuJianBuModel.update(query, {$set:update }, function(err, obj) {
+		console.log(err);
+		console.log(obj);
+		deferred.resolve();
+	});
+	return deferred.promise;
+}
 MongoDB.prototype.insertTestRecord = function(){
 	var testEntity = new this.TestModel({name:'alex', id: 2});
 	testEntity.save();

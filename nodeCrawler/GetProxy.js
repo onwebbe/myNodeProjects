@@ -4,7 +4,7 @@ var cheerio = require('cheerio');
 var Q = require("q");
 var verifyTimeout = 3000;
 function GetProxy(){
-  this.apiurl = "http://api.goubanjia.com/api/get.shtml?order=ab8a0dc28f69eafe14b26a8f91b01637&num=300&carrier=0&protocol=1&an1=1&an2=2&an3=3&sp1=1&sp2=2&sort=2&system=1&distinct=0&rettype=1&seprator=%0D%0A";
+  this.apiurl = "http://api.goubanjia.com/api/get.shtml?order=ab8a0dc28f69eafe14b26a8f91b01637&num=300&area=%E4%B8%AD%E5%9B%BD,%E4%B8%AD%E5%9B%BD&carrier=0&protocol=1&an1=1&an2=2&an3=3&sp1=1&sp2=2&sort=1&system=1&distinct=0&rettype=1&seprator=%0D%0A";
   this.currentSetOfProxyList = [];
   this.validProxyList = [];
   this.notValidProxyList = [];
@@ -76,7 +76,7 @@ GetProxy.prototype.validateProxy = function(proxy) {
   let self = this;
   let defer = Q.defer();
   let req = request
-      .get("http://www.baidu.com/?param="+proxy)
+      .get("http://jzsc.mohurd.gov.cn/dataservice/query/comp/compPerformanceListSys/001607220057201952?param="+proxy)
       .proxy("http://"+proxy)
       .timeout({
         response: 10000,  // Wait 5 seconds for the server to start sending,
@@ -101,7 +101,7 @@ GetProxy.prototype.validateProxy = function(proxy) {
                 self.notValidProxyList.push(proxystr);
               }
               let $ = cheerio.load(dataText);
-              if ($(".s_ipt").length > 0) {
+              if ($("[sf='pagebar']").length > 0) {
                 console.log("valid:" + proxystr);
                 self.validProxyList.push(proxystr);
               }else{

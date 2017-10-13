@@ -1,4 +1,5 @@
 'use strict';
+var config = require('config');
 var fs = require('fs');
 var Q = require('q');
 var Nightmare = require('nightmare');
@@ -6,13 +7,21 @@ var cheerio = require('cheerio');
 var moment = require('moment');
 var MongoDB = require('./mongodb.js');
 var MySQLDB = require('./mysql.js');
-var mongoDB = new MongoDB('localhost', 'SiChuanListData');
-var mySqlDB = new MySQLDB('localhost', 'root', '123456', 'SiChuanListData');
+var mongoDB = new MongoDB(config.get('databases.mongo.url'), config.get('databases.mongo.schema'));
+var mySqlDB = new MySQLDB(config.get('databases.mysql.url'), config.get('databases.mysql.username'), config.get('databases.mysql.password'), config.get('databases.mysql.schema'));
 var request = require('superagent');
 require('superagent-proxy')(request);
 var EventEmitter = require('events').EventEmitter;
 var event = new EventEmitter();
 var GetProxy = require('./GetProxy.js');
+
+
+
+var runDate = moment().format('YYYY-MM-DD HH:mm:ss');
+var version = 1;
+var information = "SiChuanZhuJianBuInfo";
+
+
 
 var proxyServers = new GetProxy();
 function SiChuanZhuJianBuData(config) {
@@ -206,6 +215,7 @@ SiChuanZhuJianBuData.prototype.saveCompanyDetailInfoOverall = function(html, sav
 };
 
 SiChuanZhuJianBuData.prototype.saveCompanyDetailInfoOverallToDB = function(allInfo) {
+  var self = this;
   var version = '';
   var runDate = '';
   var information = '';
@@ -225,6 +235,7 @@ SiChuanZhuJianBuData.prototype.saveCompanyDetailInfoOverallToDB = function(allIn
   params.push(allInfo.certificateURL);
   mySqlDB.queryData(sql, params)
     .then(function(result) {
+      mongoDB.updateZhuJuanBu({index:parseInt(allInfo.recordIndex)},{processed: true});
       // console.log(result);
     });
 };
@@ -240,42 +251,148 @@ SiChuanZhuJianBuData.prototype.saveCompanyDetailInfoOverallToDB = function(allIn
 
 
 SiChuanZhuJianBuData.prototype.getZhuJianBuDetail = function() {
-  var that = this;
-  this.getZhuJianBuData()
-    .then(function(result) {
-      that.getZhuJianBuDetailOneCompany(result, 0);
-    });
+  var self = this;
+  var sql = 'select * from companyInfoZhuJianBu';
+  mySqlDB.queryData(sql).then(function(data) {
+    var item = data[1];
+    console.log(item);
+    self.getZhuJianBuDetailOneCompany(item);
+  });
 };
-
 SiChuanZhuJianBuData.prototype.getZhuJianBuDetailOneCompany = function(companyInfo) {
   var self = this;
   var personURL = companyInfo.registerPersonURL;
   var projectURL = companyInfo.projectURL;
   var certificateURL = companyInfo.certificateURL;
+  this.getZhuJianBuDetailSubPage('http://jzsc.mohurd.gov.cn/dataservice/query/comp/compPerformanceListSys/001607220057201952', companyInfo, function(html, companyid){
+    //self.getZhuJianBuPersonPageSave(html, companyid);
+    //self.getZhuJianBuPCertificatePageSave(html, companyid);
+    self.getZhuJianBuProjectPageSave(html, companyid);
+  }).then(function() {
+    console.log("end");
+  });
 };
-SiChuanZhuJianBuData.prototype.getZhuJianBuPerson = function(url, companyInfo){
+
+
+
+
+
+SiChuanZhuJianBuData.prototype.getZhuJianBuDetailSubPage = function(url, companyInfo, saveFunction){
+  var saveFunctionName = saveFunction.name;
   var deferred = Q.defer();
-  mongoDB.removeLog("ZhuJianBuWebPersonalInfo");
+  mongoDB.removeLog("getZhuJianBuDetailSubPage:saveFunction:" + saveFunctionName);
   var self = this;
   var deferred = Q.defer();
   var companyid = companyInfo.companyid;
+  var nextProxyItem = self.getNextProxy();
+  console.log('proxy:'+nextProxyItem+':'+url);
   request
-    .proxy('http://'+self.getNextProxy())
     .get(url)
+    .proxy('http://'+nextProxyItem)
+    .timeout({
+        response: 20000,  // Wait 5 seconds for the server to start sending,
+        deadline: 20000, // but allow 1 minute for the file to finish loading.
+      })
+    .end(function(err, res) {
+      //console.log(err);
+      console.log(res);
+      try {
+        if (err) {
+          if (err.timeout) {
+            console.log('getZhuJianBuDetailSubPage:saveFunction:'+ saveFunctionName + 'error timeout get from server');
+          } else {
+            console.log('getZhuJianBuDetailSubPage:saveFunction:' + saveFunctionName + 'error other get from server')
+          }
+          mongoDB.addLog('error', 'debug', 'error in processing url:'+url, 'getZhuJianBuDetailSubPage:saveFunction:'+ saveFunctionName);
+          deferred.reject();
+          return;
+        }
+        var html = res.res.text;
+        if (!res || !res.res) {
+          mongoDB.addLog('error', 'debug', 'error in processing url:'+url, 'getZhuJianBuDetailSubPage:saveFunction:'+ saveFunctionName);
+          deferred.reject();
+          return;
+        }
+        mongoDB.addLog('info', 'debug', 'start process person page:'+'1'+' companyinfo:'+companyInfo, 'getZhuJianBuDetailSubPage:saveFunction:'+ saveFunctionName);
+        saveFunction(html, companyid);
+        self.getZhuJianBuDetailSubPagePagenation(html, url, companyInfo, saveFunction).then(function(){
+          deferred.resolve();
+        });
+      } catch(e) {
+        console.log('getZhuJianBuDetailSubPage:saveFunction:'+ saveFunctionName + 'Exception throws from getZhuJianBuDetailSubPage'+e);
+      } finally {
+        return;
+      }
+      return;
+      
+    });
+  return deferred.promise;
+};
+SiChuanZhuJianBuData.prototype.getZhuJianBuDetailSubPagePagenation = function(html, url, companyInfo, saveFunction){
+  var $ = cheerio.load(html);
+  var companyid = companyInfo.companyid;
+  var deferred = Q.defer();
+  var deferredList = [];
+  console.log('getZhuJianBuDetailSubPagePagenation:size:' + $("[sf='pagebar']").length);
+  if ($("[sf='pagebar']").length > 0) {
+    var pagedata = $("[sf='pagebar']").attr("sf:data");
+    var pageDataJSON = eval(pagedata);
+    console.log('getZhuJianBuDetailSubPagePagenation:pageObj');
+    console.log(pageDataJSON);
+    var totalPageNum = pageDataJSON.pc;
+    for (var i = 2; i <= totalPageNum; i++) {
+      console.log('getZhuJianBuDetailSubPagePagenation:start_page:' + i);
+      var defItem = this.getZhuJianBuSubPagePagenationData(url, pageDataJSON, i, companyid, saveFunction);
+      deferredList.push(defItem);
+    }
+    Q.allSettled(deferredList)
+      .then(function () {
+        deferred.resolve();
+      });
+  } else {
+    setTimeout(function(){
+      deferred.resolve();
+    }, 100);
+    
+  }
+  return deferred.promise;
+};
+SiChuanZhuJianBuData.prototype.getZhuJianBuSubPagePagenationData = function(url, pageData, pageNum, companyid, saveFunction){
+  var self = this;
+  var saveFunctionName = saveFunction.name;
+  var deferred = Q.defer();
+  request
+    .post(url)
+    .proxy('http://'+self.getNextProxy())
+    .set('Content-Type', 'application/x-www-form-urlencoded').send(
+      {
+        $total: pageData.tt,
+        $reload: 0,
+        $pg: pageNum,
+        $pgsz: pageNum.ps
+      }
+    )
     .end(function(err, res) {
       if (err) {
-        mongoDB.addLog('error', 'debug', 'error in processing url:'+url, 'ZhuJianBuWebPersonalInfo');
+        mongoDB.addLog('error', 'debug', 'error in processing url:'+url, 'getZhuJianBuSubPagePagenationData:saveFunction:' + saveFunctionName);
         deferred.reject();
         return;
       }
       var html = res.res.text;
-      mongoDB.addLog('info', 'debug', 'start process person page:'+'1'+' companyinfo:'+companyInfo, 'ZhuJianBuWebPersonalInfo');
-      self.getZhuJianBuPersonPageSave(html, companyid);
+      if (!res || !res.res) {
+        mongoDB.addLog('error', 'debug', 'error in processing url:'+url, 'getZhuJianBuSubPagePagenationData:saveFunction:' + saveFunctionName);
+        deferred.reject();
+        return;
+      }
+      mongoDB.addLog('info', 'debug', 'start process person page:'+pageNum+' companyid:'+companyid, 'getZhuJianBuSubPagePagenationData:saveFunction:' + saveFunctionName);
+      saveFunction.call(self, html, companyid);
       deferred.resolve();
       return;
     });
   return deferred.promise;
 };
+
+
 SiChuanZhuJianBuData.prototype.getZhuJianBuPersonPageSave = function(html, companyid) {
   console.log('getZhuJianBuPersonPageSave');
   var $ = cheerio.load(html);
@@ -338,108 +455,10 @@ SiChuanZhuJianBuData.prototype.getZhuJianBuPersonPageSaveDB = function(person) {
       return result;
     });
 };
-SiChuanZhuJianBuData.prototype.getZhuJianBuProject = function(url, companyInfo){
-  mongoDB.removeLog("ZhuJianBuWebProjectInfo");
-  var that = this;
-  var deferred = Q.defer();
-  var nightmare = Nightmare({
-    waitTimeout: 20000, // in ms
-    show: true
-  });
-  var random = parseInt(Math.random()*5) * 1000;
-  mongoDB.addLog("info","debug","start process url:"+url+" companyinfo:"+companyInfo, "ZhuJianBuWebProjectInfo");
-  var companyid = companyInfo.companyid;
-  nightmare.goto(url)
-    .wait("table")
-    .wait(2000);
-    nightmare.evaluate(function(){
-      return document.body.innerHTML;
-    })
-    .then(function(res){
-      mongoDB.addLog("info","debug","start process project page:"+"1"+" companyinfo:"+companyInfo, "ZhuJianBuWebProjectInfo");
-      that.getZhuJianBuProjectPageSave(res, companyid);
-      that.getZhuJianBuProjectPage(nightmare, 2, companyid, deferred);
-    })
-    .catch(function(e){
-      mongoDB.addLog("error","debug","error in processing url:"+url, "ZhuJianBuWebProjectInfo");
-        console.log("!!!!!!!!!!!!!!!!!!!!error!!!!!!!!!!!!!!!!!!!!");
-        setTimeout(function(){
-          that.getZhuJianBuProject(url, companyInfo);
-        }, random*60);
-        nightmare.evaluate(function(){
-          return document.body.innerHTML;
-        })
-        .end()
-        .then(function(){
-          console.log("end");
-        })
-        .catch(function(){
 
-        });
-      /*console.log("error");
-      console.log(e);
-      nightmare.end();
-      deferred.reject(e);*/
-    });
-  return deferred.promise;
-}
-SiChuanZhuJianBuData.prototype.getZhuJianBuProjectPage = function(nightM, idx, companyid, deferred){
-  var that = this;
-  var random = parseInt(Math.random()*5) * 1000;
-  //console.log("start getZhuJianBuProjectPage ");
-  mongoDB.addLog("info","debug","start process project page:"+idx+" companyid:"+companyid, "ZhuJianBuWebProjectInfo");
-  nightM
-    .exists(".quotes a[dt='"+(idx)+"']")
-    .then(function(res){
-      if(res){
-        console.log("next button exists, start");
-        mongoDB.addLog("info","debug","Project page next button exists, start process company:"+companyid+" buttonIndex:"+idx, "ZhuJianBuWebProjectInfo");
-        nightM.wait(2000)
-          .click(".quotes a[dt='"+idx+"']")
-          .wait(6000)
-          .evaluate(function(){
-              return document.body.innerHTML;
-          })
-          .then(function(res){
-            //that.saveHTML("/MyProjects/"+idx+".html", res);
-            that.getZhuJianBuProjectPageSave(res, companyid);
-            //console.log(res);
-            // nightM.exists(".quotes a[dt='"+(idx+1)+"']")
-            // console.log(isExists);
-            that.getZhuJianBuProjectPage(nightM, idx+1, companyid, deferred);
-          })
-          .catch(function(){
-            setTimeout(function(){
-                that.getZhuJianBuProjectPage(nightM, idx, companyid, deferred);
-              }, random*60);
-          })
-      }else{
-        //if button not exists then the page already saved in the previous code
-        //so just close the browser and exit.
-        //console.log("next button not exists, end");
-        mongoDB.addLog("info","debug","Project page next button not exists, end process company:"+companyid+" buttonIndex:"+idx, "ZhuJianBuWebProjectInfo");
-        nightM
-          .wait(100)
-          .evaluate(function(){
-            return document.body.innerHTML;
-          })
-          .end()
-          .then(function(){
-            //console.log("next button not exists, end");
-            mongoDB.addLog("info","debug","Project page done for company:"+companyid, "ZhuJianBuWebProjectInfo");
-            deferred.resolve();
-          })
-          .catch(function(e){
-            //console.log("next button not exists, end");
-            mongoDB.addLog("error","debug","Project page error for company:"+companyid, "ZhuJianBuWebProjectInfo");
-            deferred.resolve();
-          });
-      }
-    })
-}
 SiChuanZhuJianBuData.prototype.getZhuJianBuProjectPageSave = function(html, companyid){
   console.log("getZhuJianBuProjectPageSave");
-  $ = cheerio.load(html);
+  var $ = cheerio.load(html);
   var replaceReg = "/\\t|\\n/g";
   var columns = $(".pro_table_box.pro_table_borderright tr");
   for(var i=0;i<columns.length;i++){
@@ -499,112 +518,9 @@ SiChuanZhuJianBuData.prototype.getZhuJianBuProjectPageSaveDB = function(project)
     });
 }
 
-
-
-
-
-SiChuanZhuJianBuData.prototype.getZhuJianBuCertificate = function(url, companyInfo){
-  mongoDB.removeLog("ZhuJianBuWebCertificateInfo");
-  var that = this;
-  var random = parseInt(Math.random()*5) * 1000;
-  var deferred = Q.defer();
-  var nightmare = Nightmare({
-    waitTimeout: 20000, // in ms
-    show: true
-  });
-  mongoDB.addLog("info","debug","start process url:"+url+" companyinfo:"+companyInfo, "ZhuJianBuWebCertificateInfo");
-  var companyid = companyInfo.companyid;
-  nightmare.goto(url)
-    .wait("table")
-    .wait(2000);
-    nightmare.evaluate(function(){
-      return document.body.innerHTML;
-    })
-    .then(function(res){
-      mongoDB.addLog("info","debug","start process certificate page:"+"1"+" companyinfo:"+companyInfo, "ZhuJianBuWebCertificateInfo");
-      that.getZhuJianBuPCertificatePageSave(res, companyid);
-      that.getZhuJianBuCertificatePage(nightmare, 2, companyid, deferred);
-    })
-    .catch(function(e){
-      mongoDB.addLog("error","debug","error in processing url:"+url, "ZhuJianBuWebCertificateInfo");
-        console.log("!!!!!!!!!!!!!!!!!!!!error!!!!!!!!!!!!!!!!!!!!");
-        setTimeout(function(){
-          that.getZhuJianBuCertificate(url, companyInfo);
-        }, random*60);
-        nightmare.evaluate(function(){
-          return document.body.innerHTML;
-        })
-        .end()
-        .then(function(){
-          console.log("end");
-        })
-        .catch(function(){
-
-        });
-      /*console.log("error");
-      console.log(e);
-      nightmare.end();
-      deferred.reject(e);*/
-    });
-  return deferred.promise;
-}
-SiChuanZhuJianBuData.prototype.getZhuJianBuCertificatePage = function(nightM, idx, companyid, deferred){
-  var that = this;
-  var random = parseInt(Math.random()*5) * 1000;
-  //console.log("start getZhuJianBuCertificatePage ");
-  mongoDB.addLog("info","debug","start process certificate page:"+idx+" companyid:"+companyid, "ZhuJianBuWebCertificateInfo");
-  nightM
-    .exists(".quotes a[dt='"+(idx)+"']")
-    .then(function(res){
-      if(res){
-        //console.log("next button exists, start");
-        mongoDB.addLog("info","debug","Certificate page next button exists, start process company:"+companyid+" buttonIndex:"+idx, "ZhuJianBuWebCertificateInfo");
-        nightM.wait(2000)
-          .click(".quotes a[dt='"+idx+"']")
-          .wait(6000)
-          .evaluate(function(){
-              return document.body.innerHTML;
-          })
-          .then(function(res){
-            //that.saveHTML("/MyProjects/"+idx+".html", res);
-            that.getZhuJianBuPCertificatePageSave(res, companyid);
-            //console.log(res);
-            // nightM.exists(".quotes a[dt='"+(idx+1)+"']")
-            // console.log(isExists);
-            that.getZhuJianBuCertificatePage(nightM, idx+1, companyid, deferred);
-          })
-          .catch(function(){
-            setTimeout(function(){
-                that.getZhuJianBuCertificatePage(nightM, idx, companyid, deferred);
-              }, random*60);
-          });
-      }else{
-        //if button not exists then the page already saved in the previous code
-        //so just close the browser and exit.
-        //console.log("next button not exists, end");
-        mongoDB.addLog("info","debug","Certificate page next button not exists, end process company:"+companyid+" buttonIndex:"+idx, "ZhuJianBuWebCertificateInfo");
-        nightM
-          .wait(100)
-          .evaluate(function(){
-            return document.body.innerHTML;
-          })
-          .end()
-          .then(function(){
-            //console.log("next button not exists, end");
-            mongoDB.addLog("info","debug","Certificate page done for company:"+companyid, "ZhuJianBuWebCertificateInfo");
-            deferred.resolve();
-          })
-          .catch(function(e){
-            //console.log("next button not exists, end");
-            mongoDB.addLog("error","debug","Certificate page error for company:"+companyid, "ZhuJianBuWebCertificateInfo");
-            deferred.resolve();
-          });
-      }
-    })
-}
 SiChuanZhuJianBuData.prototype.getZhuJianBuPCertificatePageSave = function(html, companyid){
   console.log("getZhuJianBuCertificatePageSave");
-  $ = cheerio.load(html);
+  var $ = cheerio.load(html);
   var trs = $("table tr");
   var columns = new Array();
   for(var i=0;i<trs.length;i++){
@@ -776,7 +692,303 @@ SiChuanZhuJianBuData.prototype.getZhuJianBuHomePageInformation = function(){
     }
   );
 };
+
+
+
+SiChuanZhuJianBuData.prototype.getZhuJianBuHomePageDetail = function(){
+  var self = this;
+  proxyServers.getProxy()
+    .then(function() {
+      console.log("---------------");
+      self.getZhuJianBuDetail();
+    }
+  );
+};
 var test = new SiChuanZhuJianBuData();
 test.getZhuJianBuHomePageInformation();
 
 module.exports = SiChuanZhuJianBuData;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+
+SiChuanZhuJianBuData.prototype.getZhuJianBuPerson = function(url, companyInfo){
+  var deferred = Q.defer();
+  mongoDB.removeLog("ZhuJianBuWebPersonalInfo");
+  var self = this;
+  var deferred = Q.defer();
+  var companyid = companyInfo.companyid;
+  var nextProxyItem = self.getNextProxy();
+  console.log('proxy:'+nextProxyItem+':'+url);
+  request
+    .timeout({
+        response: 10000,  // Wait 5 seconds for the server to start sending,
+        deadline: 10000, // but allow 1 minute for the file to finish loading.
+      })
+    .proxy('http://'+nextProxyItem)
+    .get(url)
+    .end(function(err, res) {
+      console.log(err);
+      console.log(res);
+      if (err) {
+        mongoDB.addLog('error', 'debug', 'error in processing url:'+url, 'ZhuJianBuWebPersonalInfo');
+        deferred.reject();
+        return;
+      }
+      var html = res.res.text;
+      mongoDB.addLog('info', 'debug', 'start process person page:'+'1'+' companyinfo:'+companyInfo, 'ZhuJianBuWebPersonalInfo');
+      self.getZhuJianBuPersonPageSave(html, companyid);
+      self.getZhuJianBuPersonPagenation(html, url, companyInfo).then(function(){
+        deferred.resolve();
+      });
+      return;
+    });
+  return deferred.promise;
+};
+SiChuanZhuJianBuData.prototype.getZhuJianBuPersonPagenation = function(html, url, companyInfo){
+  var $ = cheerio.load(html);
+  var companyid = companyInfo.companyid;
+  var deferred = Q.defer();
+  var deferredList = [];
+  if ($("[sf='pagebar']").length > 0) {
+    var pagedata = $("[sf='pagebar']").attr("sf:data");
+    var pageDataJSON = eval(pagedata);
+    var totalPageNum = pageDataJSON.pc;
+    for (var i = 2; i <= totalPageNum; i++) {
+      var defItem = this.getZhuJianBuPersonPagenationData(url, pageDataJSON, i, companyid);
+      deferredList.push(defItem);
+    }
+    Q.allSettled(deferredList)
+      .then(function () {
+        deferred.resolve();
+      });
+  } else {
+    setTimeout(function(){
+      deferred.resolve();
+    }, 100);
+    
+  }
+  return deferred.promise;
+};
+SiChuanZhuJianBuData.prototype.getZhuJianBuPersonPagenationData = function(url, pageData, pageNum, companyid){
+  var deferred = Q.defer();
+  request
+    .proxy('http://'+self.getNextProxy())
+    .post(url)
+    .set('Content-Type', 'application/x-www-form-urlencoded').send(
+      {
+        $total: pageData.tt,
+        $reload: 0,
+        $pg: pageNum,
+        $pgsz: pageNum.ps
+      }
+    )
+    .end(function(err, res) {
+      if (err) {
+        mongoDB.addLog('error', 'debug', 'error in processing url:'+url, 'ZhuJianBuWebPersonalInfo');
+        deferred.reject();
+        return;
+      }
+      var html = res.res.text;
+      if (!res || !res.res) {
+        mongoDB.addLog('error', 'debug', 'error in processing url:'+url, 'ZhuJianBuWebPersonalInfo');
+        deferred.reject();
+        return;
+      }
+      mongoDB.addLog('info', 'debug', 'start process person page:'+pageNum+' companyinfo:'+companyInfo, 'ZhuJianBuWebPersonalInfo');
+      self.getZhuJianBuPersonPageSave(html, companyid);
+      deferred.resolve();
+      return;
+    });
+  return deferred.promise;
+};
+SiChuanZhuJianBuData.prototype.getZhuJianBuProject = function(url, companyInfo){
+  mongoDB.removeLog("ZhuJianBuWebProjectInfo");
+  var that = this;
+  var deferred = Q.defer();
+
+  var companyid = companyInfo.companyid;
+  var nextProxyItem = self.getNextProxy();
+  console.log('proxy:'+nextProxyItem+':'+url);
+  request
+    .timeout({
+        response: 10000,  // Wait 5 seconds for the server to start sending,
+        deadline: 10000, // but allow 1 minute for the file to finish loading.
+      })
+    .proxy('http://'+nextProxyItem)
+    .get(url)
+    .end(function(err, res) {
+      console.log(err);
+      console.log(res);
+      if (err) {
+        mongoDB.addLog('error', 'debug', 'error in processing url:'+url, 'ZhuJianBuWebPersonalInfo');
+        deferred.reject();
+        return;
+      }
+      var html = res.res.text;
+      that.getZhuJianBuProjectPageSave(html, companyid);
+      return;
+    });
+  return deferred.promise;
+}
+SiChuanZhuJianBuData.prototype.getZhuJianBuProjectPage = function(html, url, companyInfo){
+  var $ = cheerio.load(html);
+  var companyid = companyInfo.companyid;
+  var deferred = Q.defer();
+  var deferredList = [];
+  if ($("[sf='pagebar']").length > 0) {
+    var pagedata = $("[sf='pagebar']").attr("sf:data");
+    var pageDataJSON = eval(pagedata);
+    var totalPageNum = pageDataJSON.pc;
+    for (var i = 2; i <= totalPageNum; i++) {
+      var defItem = this.getZhuJianBuProjectPagenationData(url, pageDataJSON, i, companyid);
+      deferredList.push(defItem);
+    }
+    Q.allSettled(deferredList)
+      .then(function () {
+        deferred.resolve();
+      });
+  } else {
+    setTimeout(function(){
+      deferred.resolve();
+    }, 100);
+    
+  }
+  return deferred.promise;
+}
+SiChuanZhuJianBuData.prototype.getZhuJianBuProjectPagenationData = function(url, pageData, pageNum, companyid) {
+  var deferred = Q.defer();
+  request
+    .proxy('http://'+self.getNextProxy())
+    .post(url)
+    .set('Content-Type', 'application/x-www-form-urlencoded').send(
+      {
+        $total: pageData.tt,
+        $reload: 0,
+        $pg: pageNum,
+        $pgsz: pageNum.ps
+      }
+    )
+    .end(function(err, res) {
+      if (err) {
+        mongoDB.addLog('error', 'debug', 'error in processing url:'+url, 'ZhuJianBuWebPersonalInfo');
+        deferred.reject();
+        return;
+      }
+      var html = res.res.text;
+      if (!res || !res.res) {
+        mongoDB.addLog('error', 'debug', 'error in processing url:'+url, 'ZhuJianBuWebPersonalInfo');
+        deferred.reject();
+        return;
+      }
+      mongoDB.addLog('info', 'debug', 'start process person page:'+pageNum+' companyinfo:'+companyInfo, 'ZhuJianBuWebPersonalInfo');
+      self.getZhuJianBuProjectPageSave(html, companyid);
+      deferred.resolve();
+      return;
+    });
+  return deferred.promise;
+}
+SiChuanZhuJianBuData.prototype.getZhuJianBuCertificate = function(url, companyInfo, saveFunction){
+  mongoDB.removeLog("ZhuJianBuWebCertificateInfo");
+  var that = this;
+  var deferred = Q.defer();
+
+  var companyid = companyInfo.companyid;
+  var nextProxyItem = self.getNextProxy();
+  console.log('proxy:'+nextProxyItem+':'+url);
+  request
+    .timeout({
+        response: 10000,  // Wait 5 seconds for the server to start sending,
+        deadline: 10000, // but allow 1 minute for the file to finish loading.
+      })
+    .proxy('http://'+nextProxyItem)
+    .get(url)
+    .end(function(err, res) {
+      console.log(err);
+      console.log(res);
+      if (err) {
+        mongoDB.addLog('error', 'debug', 'error in processing url:'+url, 'ZhuJianBuWebPersonalInfo');
+        deferred.reject();
+        return;
+      }
+      var html = res.res.text;
+      saveFunction(html, companyid);
+      return;
+    });
+  return deferred.promise;
+}
+SiChuanZhuJianBuData.prototype.getZhuJianBuCertificatePage = function(nightM, idx, companyid, deferred){
+  var that = this;
+  var random = parseInt(Math.random()*5) * 1000;
+  //console.log("start getZhuJianBuCertificatePage ");
+  mongoDB.addLog("info","debug","start process certificate page:"+idx+" companyid:"+companyid, "ZhuJianBuWebCertificateInfo");
+  nightM
+    .exists(".quotes a[dt='"+(idx)+"']")
+    .then(function(res){
+      if(res){
+        //console.log("next button exists, start");
+        mongoDB.addLog("info","debug","Certificate page next button exists, start process company:"+companyid+" buttonIndex:"+idx, "ZhuJianBuWebCertificateInfo");
+        nightM.wait(2000)
+          .click(".quotes a[dt='"+idx+"']")
+          .wait(6000)
+          .evaluate(function(){
+              return document.body.innerHTML;
+          })
+          .then(function(res){
+            //that.saveHTML("/MyProjects/"+idx+".html", res);
+            that.getZhuJianBuPCertificatePageSave(res, companyid);
+            //console.log(res);
+            // nightM.exists(".quotes a[dt='"+(idx+1)+"']")
+            // console.log(isExists);
+            that.getZhuJianBuCertificatePage(nightM, idx+1, companyid, deferred);
+          })
+          .catch(function(){
+            setTimeout(function(){
+                that.getZhuJianBuCertificatePage(nightM, idx, companyid, deferred);
+              }, random*60);
+          });
+      }else{
+        //if button not exists then the page already saved in the previous code
+        //so just close the browser and exit.
+        //console.log("next button not exists, end");
+        mongoDB.addLog("info","debug","Certificate page next button not exists, end process company:"+companyid+" buttonIndex:"+idx, "ZhuJianBuWebCertificateInfo");
+        nightM
+          .wait(100)
+          .evaluate(function(){
+            return document.body.innerHTML;
+          })
+          .end()
+          .then(function(){
+            //console.log("next button not exists, end");
+            mongoDB.addLog("info","debug","Certificate page done for company:"+companyid, "ZhuJianBuWebCertificateInfo");
+            deferred.resolve();
+          })
+          .catch(function(e){
+            //console.log("next button not exists, end");
+            mongoDB.addLog("error","debug","Certificate page error for company:"+companyid, "ZhuJianBuWebCertificateInfo");
+            deferred.resolve();
+          });
+      }
+    })
+}*/

@@ -35,6 +35,9 @@ create table companyInfoZhuJianBu(
 	updateDate date,
 	last_updated_date timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE = InnoDB CHARSET=utf8;
+alter table companyInfoZhuJianBu add processedPerson boolean;
+alter table companyInfoZhuJianBu add processedProject boolean;
+alter table companyInfoZhuJianBu add processedCertificate boolean;
 
 create table companyPersonInfoZhuJianBu(
 	companypersonid int(11) not null primary key AUTO_INCREMENT,

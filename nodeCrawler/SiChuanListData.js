@@ -10,6 +10,9 @@ var mongoDB = new MongoDB("localhost","SiChuanListData");
 //var mySqlDB = new MySQLDB("localhost","root","123456","SiChuanListData");
 var request = require('superagent');
 var runDate = moment().format('YYYY-MM-DD HH:mm:ss');
+
+
+
 function SiChuanListData(config){
   this.dataversion = 1;
   this.subcategory = '施工企业';

@@ -1,0 +1,7 @@
+{
+  "databases": {
+    "mysql": {
+      "username": "root",
+      "password": "Hejun123456"
+    }
+}

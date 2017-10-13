@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "cheerio": "^1.0.0-rc.1",
+    "config": "^1.26.2",
     "moment": "^2.18.1",
     "mongoose": "^4.11.3",
     "mysql": "^2.13.0",
