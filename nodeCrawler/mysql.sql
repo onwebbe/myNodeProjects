@@ -89,3 +89,18 @@ create table companyCertificateInfoZhuJianBu(
 	last_updated_date timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 	CONSTRAINT `companyCertificateCompanyID` FOREIGN KEY (`companyid`) REFERENCES `companyInfoZhuJianBu` (`companyid`)
 ) ENGINE = InnoDB CHARSET=utf8;
+
+create table companyDetailPageInfo(
+	companydetailpageinfoid int(11) not null primary key AUTO_INCREMENT,
+	companyid int(11),
+	pagetype varchar(50),
+	pagecontentraw varchar(500),
+	totalpage integer,
+	totalrecord integer,
+	pagesize integer,
+	version integer,
+	information varchar(100),
+	updateDate date,
+	last_updated_date timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+	CONSTRAINT `companydetailpageinfoCompanyID` FOREIGN KEY (`companyid`) REFERENCES `companyInfoZhuJianBu` (`companyid`)
+) ENGINE = InnoDB CHARSET=utf8;	

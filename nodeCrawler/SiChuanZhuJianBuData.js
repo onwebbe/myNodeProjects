@@ -262,6 +262,7 @@ SiChuanZhuJianBuData.prototype.getZhuJianBuDetail = function() {
 SiChuanZhuJianBuData.prototype.getZhuJianBuDetailOneCompany = function(companyInfo) {
   var self = this;
   var deferred = Q.defer();
+  var thecompanyid = companyInfo.companyid;
   var personURL = companyInfo.registerPersonURL;
   var projectURL = companyInfo.projectURL;
   var certificateURL = companyInfo.certificateURL;
@@ -295,6 +296,7 @@ SiChuanZhuJianBuData.prototype.getZhuJianBuDetailOneCompany = function(companyIn
   }
   Q.allSettled(deferredArray)
     .then(function () {
+      self.updateOneCompanyProcessedFlag(thecompanyid);
       deferred.resolve();
     });
   return deferred.promise;
@@ -314,7 +316,16 @@ SiChuanZhuJianBuData.prototype.getZhuJianBuDetailOneCompany = function(companyIn
     console.log("certificate end");
   });*/
 };
-
+SiChuanZhuJianBuData.prototype.updateOneCompanyProcessedFlag = function(companyid) {
+  var sql = 'update `companyInfoZhuJianBu` set processedPerson=true, processedProject=true, processedCertificate=true where companyid=?';
+  var params = [];
+  params.push(companyid);
+  mongoDB.addLog('info', 'debug', 'Execute inser query:'+sql+'params:'+params.join(','), 'updateOneCompanyProcessedFlag');
+  mySqlDB.queryData(sql, params)
+    .then(function(result){
+      //console.log(result);
+    });
+} 
 
 
 
@@ -400,6 +411,7 @@ SiChuanZhuJianBuData.prototype.getZhuJianBuDetailSubPagePagenation = function(ht
     console.log(pageDataJSON);
     mongoDB.addLog('info', 'debug', 'have pagenation:companyid:'+companyid+':pageData:'+pagedata, 'getZhuJianBuDetailSubPagePagenation:saveFunction:'+ saveFunctionName);
     var totalPageNum = pageDataJSON.pc;
+    this.savePageData(companyid, saveFunctionName, pageDataJSON);
     for (var i = 2; i <= totalPageNum; i++) {
       mongoDB.addLog('info', 'debug', 'StartProcessPage:companyid:'+companyid+':pageID:'+i, 'getZhuJianBuDetailSubPagePagenation:saveFunction:'+ saveFunctionName);
       console.log('getZhuJianBuDetailSubPagePagenation:start_page:' + i);
@@ -499,6 +511,28 @@ SiChuanZhuJianBuData.prototype.getZhuJianBuSubPagePagenationData = function(url,
   execInner.innerInnerF();
   return deferred.promise;
 };
+SiChuanZhuJianBuData.prototype.savePageData = function(companyid, functionName, pageJSONObj) {
+  var sql = "INSERT INTO `companyDetailPageInfo` (`companyid`, `pagetype`, `pagecontentraw`, `totalpage`, `totalrecord`, `pagesize`, `version`, `updateDate`, `information`) VALUES "
+    +"(?, ?, ?, ?, ?, ?, '"+version+"', '"+runDate+"', '"+information+"')";
+  var params = [];
+  var totalpage = pageJSONObj.pc;
+  var totalrecord = pageJSONObj.tt;
+  var pagesize = pageJSONObj.ps;
+  params.push(companyid);
+  params.push(functionName);
+  params.push(JSON.stringify(pageJSONObj));
+  params.push(totalpage);
+  params.push(totalrecord);
+  params.push(pagesize);
+  mongoDB.addLog('info', 'debug', 'Execute inser query:'+sql+'params:'+params.join(','), 'savePageData');
+  mySqlDB.queryData(sql, params)
+    .then(function(result){
+      //console.log(result);
+    });
+};
+
+
+
 
 
 SiChuanZhuJianBuData.prototype.getZhuJianBuPersonPageSave = function(html, companyid) {
