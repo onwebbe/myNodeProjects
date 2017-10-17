@@ -4,7 +4,7 @@ var cheerio = require('cheerio');
 var Q = require("q");
 var verifyTimeout = 3000;
 function GetProxy(){
-  this.apiurl = "http://api.goubanjia.com/api/get.shtml?order=ab8a0dc28f69eafe14b26a8f91b01637&num=400&carrier=0&protocol=1&an1=1&an2=2&an3=3&sp1=1&sp2=2&sort=1&system=1&distinct=0&rettype=1&seprator=%0D%0A";
+  this.apiurl = "http://api.goubanjia.com/api/get.shtml?order=ab8a0dc28f69eafe14b26a8f91b01637&num=400&carrier=0&protocol=1&an1=1&an2=2&an3=3&sp1=1&sp2=2&sp3=3&sort=1&system=1&distinct=0&rettype=1&seprator=%0D%0A";
   this.currentSetOfProxyList = [];
   this.validProxyList = [];
   this.notValidProxyList = [];
@@ -79,8 +79,8 @@ GetProxy.prototype.validateProxy = function(proxy) {
       .get("http://jzsc.mohurd.gov.cn/dataservice/query/comp/compPerformanceListSys/001607220057201952?param="+proxy)
       .proxy("http://"+proxy)
       .timeout({
-        response: 10000,  // Wait 5 seconds for the server to start sending,
-        deadline: 10000, // but allow 1 minute for the file to finish loading.
+        response: 20000,  // Wait 5 seconds for the server to start sending,
+        deadline: 20000, // but allow 1 minute for the file to finish loading.
       })
       .end(function (err, sres) {
         try {

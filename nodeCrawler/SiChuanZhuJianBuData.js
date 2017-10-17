@@ -252,7 +252,7 @@ SiChuanZhuJianBuData.prototype.saveCompanyDetailInfoOverallToDB = function(allIn
 
 SiChuanZhuJianBuData.prototype.getZhuJianBuDetail = function() {
   var self = this;
-  var sql = 'select * from companyInfoZhuJianBu';
+  var sql = 'select * from companyInfoZhuJianBu where processedPerson is null and processedProject is null and processedCertificate is null';
   mySqlDB.queryData(sql).then(function(data) {
     var item = data[1];
     console.log(item);
@@ -343,8 +343,8 @@ SiChuanZhuJianBuData.prototype.getZhuJianBuDetailSubPage = function(url, company
     .get(url)
     .proxy('http://'+nextProxyItem)
     .timeout({
-        response: 20000,  // Wait 5 seconds for the server to start sending,
-        deadline: 20000, // but allow 1 minute for the file to finish loading.
+        response: 30000,  // Wait 5 seconds for the server to start sending,
+        deadline: 30000, // but allow 1 minute for the file to finish loading.
       })
     .end(function(err, res) {
       //console.log(err);
@@ -466,8 +466,8 @@ SiChuanZhuJianBuData.prototype.getZhuJianBuSubPagePagenationData = function(url,
       request
         .post(url)
         .timeout({
-          response: 20000,  // Wait 5 seconds for the server to start sending,
-          deadline: 20000, // but allow 1 minute for the file to finish loading.
+          response: 30000,  // Wait 5 seconds for the server to start sending,
+          deadline: 30000, // but allow 1 minute for the file to finish loading.
         })
         .proxy('http://'+self.getNextProxy())
         .set('Content-Type', 'application/x-www-form-urlencoded').send(
