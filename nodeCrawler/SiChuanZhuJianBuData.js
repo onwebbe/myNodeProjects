@@ -890,7 +890,7 @@ SiChuanZhuJianBuData.prototype.getZhuJianBuDetailPagesInformation = function(){
   proxyServers.getProxy()
     .then(function() {
       console.log("---------------");
-      var sql = 'select * from companyInfoZhuJianBu';
+      var sql = 'select * from companyInfoZhuJianBu where processedPerson is null and processedProject is null and processedCertificate is null';
       mySqlDB.queryData(sql).then(function(data) {
         self.processZhuJianBuDetailPagesTimeInterval(data);
       });
