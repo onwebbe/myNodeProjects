@@ -504,7 +504,7 @@ SiChuanZhuJianBuData.prototype.getZhuJianBuSubPagePagenationData = function(url,
             }
           }
         });
-    }, (currentIndex - 2) * 10000);
+    }, (currentIndex - 2) * 1000);
   }
 
   var execInner = new innerF(url, pageData, pageNum, companyid, saveFunction, saveFunctionName, currentIndex, deferred);
@@ -881,7 +881,7 @@ SiChuanZhuJianBuData.prototype.processZhuJianBuDetailPagesTimeInterval = functio
         console.log("Finish index:"+(currentIndex-1)+":start next:"+currentIndex);
         mongoDB.addLog('info', 'debug', "Finish index:"+(currentIndex-1)+":start next:"+currentIndex, 'processZhuJianBuDetailPagesTimeInterval');
         self.processZhuJianBuDetailPagesTimeInterval(listdata, currentIndex);
-      }, 10000);
+      }, 3000);
     });
   }
 };
