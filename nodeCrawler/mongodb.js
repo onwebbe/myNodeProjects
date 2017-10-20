@@ -176,6 +176,16 @@ MongoDB.prototype.findZhuJianBu = function(query){
 	});
 	return deferred.promise;
 }
+MongoDB.prototype.findLog = function(query){
+	var deferred = Q.defer();
+	if(query==null){
+		query = {};
+	}
+	this.LogModel.find(query, function(err, data){
+		deferred.resolve(data);
+	});
+	return deferred.promise;
+}
 MongoDB.prototype.updateZhuJuanBu = function(query, update) {
 	var deferred = Q.defer();
 	this.ZhuJianBuModel.update(query, {$set:update }, function(err, obj) {
