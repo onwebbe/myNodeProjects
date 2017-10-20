@@ -827,15 +827,23 @@ SiChuanZhuJianBuData.prototype.getZhuJianBuData = function(){
 
 SiChuanZhuJianBuData.prototype.processMissingData = function () {
   this.findMissingDetailPageError().then(function() {
-    setTimeout(function() {
+    /*setTimeout(function() {
       mySqlDB.close();
       mongoDB.close();
-    }, 3000)
+    }, 3000)*/
     
   });
 } 
 SiChuanZhuJianBuData.prototype.findMissingDetailPageError = function() {
   var deferred = Q.defer();
+
+  var deferredPerson = Q.defer();
+  var deferredProject = Q.defer();
+  var deferredCertificate = Q.defer();
+  var deferredArray = [];
+  deferredArray.push(deferredPerson.promise);
+  deferredArray.push(deferredProject.promise);
+  deferredArray.push(deferredCertificate.promise);
   let self = this;
   mongoDB.findLog({type:'error',key:'getZhuJianBuSubPagePagenationData:saveFunction:getZhuJianBuPersonPageSave'})
     .then(function(data) {
@@ -844,7 +852,7 @@ SiChuanZhuJianBuData.prototype.findMissingDetailPageError = function() {
         let content = item.content;
         let url = content.substring(content.lastIndexOf('http'));
         self.processMissingDetailPageError('person', url);
-        deferred.resolve();
+        deferredPerson.resolve();
       }
     });
   mongoDB.findLog({type:'error',key:'getZhuJianBuSubPagePagenationData:saveFunction:getZhuJianBuPCertificatePageSave'})
@@ -854,7 +862,7 @@ SiChuanZhuJianBuData.prototype.findMissingDetailPageError = function() {
         let content = item.content;
         let url = content.substring(content.lastIndexOf('http'));
         self.processMissingDetailPageError('certificate', url);
-        deferred.resolve();
+        deferredCertificate.resolve();
       }
     });
   mongoDB.findLog({type:'error',key:'getZhuJianBuSubPagePagenationData:saveFunction:getZhuJianBuProjectPageSave'})
@@ -864,8 +872,12 @@ SiChuanZhuJianBuData.prototype.findMissingDetailPageError = function() {
         let content = item.content;
         let url = content.substring(content.lastIndexOf('http'));
         self.processMissingDetailPageError('project', url);
-        deferred.resolve();
+        deferredProject.resolve();
       }
+    });
+    Q.allSettled(deferredArray)
+    .then(function () {
+      deferred.resolve();
     });
   return deferred.promise;
 }
@@ -893,6 +905,7 @@ SiChuanZhuJianBuData.prototype.processMissingDetailPageError = function(processT
       if (data && data.length > 0) {
         let item = data[0];
         let companyid = item.companyid;
+        console.log('companyid:' + companyid);
         self.updateOneCompanyProcessedFlag(companyid, processType, false);
       }
     });
