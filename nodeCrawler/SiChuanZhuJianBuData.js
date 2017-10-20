@@ -873,7 +873,7 @@ SiChuanZhuJianBuData.prototype.processMissingDetailPageError = function(processT
   //updateOneCompanyProcessedFlag
   let self = this;
   let num = url.substring(url.lastIndexOf('/')+1);
-  let sql = 'select * from companyDetailPageInfo where ';
+  let sql = 'select * from companyInfoZhuJianBu where ';
 
   switch (processType) {
   case 'person':
