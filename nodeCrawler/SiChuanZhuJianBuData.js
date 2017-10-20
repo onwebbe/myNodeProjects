@@ -827,10 +827,10 @@ SiChuanZhuJianBuData.prototype.getZhuJianBuData = function(){
 
 SiChuanZhuJianBuData.prototype.processMissingData = function () {
   this.findMissingDetailPageError().then(function() {
-    /*setTimeout(function() {
+    setTimeout(function() {
       mySqlDB.close();
       mongoDB.close();
-    }, 3000)*/
+    }, 10000);
     
   });
 } 
