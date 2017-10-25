@@ -111,18 +111,18 @@ function testAsyncEachLimit() {
 
 function testAsyncEachLimit2() {
   // assuming openFiles is an array of file names
-  var openFiles = ['1','2','3','4','5'];
+  var openFiles = [{'name':'1'},{'name':'2'},{'name':'3'},{'name':'4'},{'name':'5'}];
   async.eachLimit(openFiles,2, function(file, callback) {
 
       // Perform operation on file here.
-      console.log('Processing file ' + file);
+      console.log('Processing file ' + file.name);
       setTimeout(function() {
-        if( file.length > 32 ) {
+        if( file.name.length > 32 ) {
           console.log('This file name is too long');
-          callback('File name too long');
+          callback();
         } else {
           // Do work to process file here
-          console.log('File processed');
+          console.log('File processed:' + file.name);
           callback();
         }
       }, 2000);
@@ -139,4 +139,4 @@ function testAsyncEachLimit2() {
   });
 }
 
-testAsyncEachLimit();
+testAsyncEachLimit2();

@@ -942,20 +942,18 @@ SiChuanZhuJianBuData.prototype.procssMissedPerson = function() {
           }, 10000);
         });
       }*/
-
-      async.eachLimit(data,2, function(item, callback) {
+      console.log(data);
+      async.eachLimit(data, 2, function(item, callback) {
         mongoDB.addLog('info', 'debug', '+Start process procssMissedPerson:companyid:'+item.companyid, 'procssMissedPerson');
-        setTimeout(function() {
-          let companyid = item.companyid;
-          self.removePerson(companyid).then(function() {
-            setTimeout(function() {
-              self.processMissedPersonData(item).then(function() {
-                mongoDB.addLog('info', 'debug', '-Done process procssMissedPerson:companyid:'+item.companyid, 'procssMissedPerson');
-                callback();
-              });
-            }, 1000);
-          });
-        }, 2000);
+        let companyid = item.companyid;
+        self.removePerson(companyid).then(function() {
+          setTimeout(function() {
+            self.processMissedPersonData(item).then(function() {
+              mongoDB.addLog('info', 'debug', '-Done process procssMissedPerson:companyid:'+item.companyid, 'procssMissedPerson');
+              callback();
+            });
+          }, 2000);
+        });
       }, function(err) {
           // if any of the file processing produced an error, err would equal that error
           if( err ) {
