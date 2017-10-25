@@ -457,8 +457,10 @@ SiChuanZhuJianBuData.prototype.getZhuJianBuDetailSubPagePagenation = function(ht
           }
         }
         if (isStatusError) {
+          console.log('-------------------------------no error');
           deferred.resolve('');
         } else {
+          console.log('-------------------------------error');
           deferred.resolve('error');
         }
       });
