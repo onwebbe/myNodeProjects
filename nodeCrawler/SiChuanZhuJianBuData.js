@@ -448,8 +448,9 @@ SiChuanZhuJianBuData.prototype.getZhuJianBuDetailSubPagePagenation = function(ht
       .then(function (status) {
         mongoDB.addLog('info', 'debug', 'All Page done:companyid:'+companyid, 'getZhuJianBuDetailSubPagePagenation:saveFunction:'+ saveFunctionName);
         let isStatusError = true;
-        console.log(status);
-        for(let x = 0; x < status.length;i++) {
+        console.log('-------------------------------no error');
+        deferred.resolve('');
+        /*for(let x = 0; x < status.length;i++) {
           let xstatus = status[x];
           if (xstatus == 'error') {
             deferred.resolve('error');
@@ -463,7 +464,7 @@ SiChuanZhuJianBuData.prototype.getZhuJianBuDetailSubPagePagenation = function(ht
         } else {
           console.log('-------------------------------error');
           deferred.resolve('error');
-        }
+        }*/
       });
   } else {
     setTimeout(function(){
